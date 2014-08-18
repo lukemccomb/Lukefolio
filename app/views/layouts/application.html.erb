@@ -2,13 +2,96 @@
 <html>
 <head>
   <title>Lukefolio</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link rel="shortcut icon" href="http://lukemccomb.com/images/favicon.ico">
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<header class="site_header clearfix">
+  <nav>
+    <p><%= image_tag "menu.png", class: 'menu_logo' %></p>
+    <p class="question_logo">?</p>
+  </nav>
+  <a href="/"><%= image_tag "lg1Lessbright.png", class: 'site_logo' %></a>
+  <% if !session[:user_id] %>
+    <a class="login">Log In</a>
+    <a class="reg">Register</a>
+  <% else %>
+    <a class="logout" href="/logout/">Logout</a>
+  <% end %>
+</header>
+<% if flash[:register_notice] %>
+  <p class="flash"><%= flash[:register_notice] %></p>
+<% end %>
+<% if flash[:reg_fail] %>
+  <p class="flash"><%= flash[:reg_fail] %></p>
+<% end %>
+<% if flash[:login_fail] %>
+  <p class="flash"><%= flash[:login_fail] %></p>
+<% end %>
+<ul class="one_third nav_menu clearfix">
+  <a href="/search"><li>SEARCH</li></a>
+  <a href="/collections"><li>COLLECTIONS</li></a>
+  <a href="/cart"><li>CART</li></a>
+</ul>
+<section class="clearfix">
+  <article class="one_third about">
+    <p>
+      Lukefolio will soon be searchable database of my images.<br><hr>
+    I'm <a class="bluelink" target="_blank" href="https://twitter.com/lukemccomb" >Luke McComb</a> and I'm learning how to build web applications at <a target="_blank" href="http://www.galvanize.it/school/#main">gSchool</a>.<br><hr>
+    My photography can be seen <a class="pinklink" href="http://lukemccomb.com" target="_blank">here</a> and will soon be available on Lukefolio.<br><hr>
+    </p>
+  </article>
+</section>
+<div class="wrapper">
+  <section class="clearfix">
+    <article class="one_third reg_form">
+      <form action="/register/" method="post">
+        <!--<label for="username">Username:</label><br>-->
+        <input name="username" id="username" type="text" autofocus placeholder="Username"><br><br>
+        <!--<label for="password">Password:</label><br>-->
+        <input name="password" id="password" type="password" placeholder="Password"><br><br>
+        <button type="submit">Register</button>
+      </form>
+    </article>
+  </section>
+  <section class="clearfix">
+    <article class="one_third login_form">
+      <%= form_for User.new, url: signin_path, html: { class: "signin-form" } do |f| %>
+        <% f.object.errors.full_messages.each do |error| %>
+          <div class="errors">
+            <%= error %>
+          </div>
+        <% end %>
+        <div>
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+        <div>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+        <div>
+          <%= f.submit "Login" %>
+        </div>
+      <% end %>
+    </article>
+  </section>
+  <%= yield %>
+  <footer class="one_third social_foot">
+    <a href="https://twitter.com/lukemccomb" target="_blank"><%= image_tag "twitterlogo.png", class: 'social' %></a>
+    <a href="https://github.com/lukemccomb" target="_blank"><%= image_tag "githublogo.png", class: 'social' %></a>
+    <a href="http://www.galvanize.it/school/#main" target="_blank"><%= image_tag "galvanizelogo.png", class: 'social' %></a>
+    <a href="http://lukemcblog.com/" target="_blank"><%= image_tag "tumblrlogo.png", class: 'social' %></a>
+    <a href="http://instagram.com/mcluukin" target="_blank"><%= image_tag "instalogo.png", class: 'social' %></a>
+    <a href="http://soundcloud.com/luukin/" target="_blank"><%= image_tag "soundcloudlogo.png", class: 'social' %></a>
+    <a href="http://hypem.com/luukin" target="_blank"><%= image_tag "hypelogo.png", class: 'social' %></a>
+  </footer>
+</div>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
+
+
