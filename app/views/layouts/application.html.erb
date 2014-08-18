@@ -14,11 +14,10 @@
     <p class="question_logo">?</p>
   </nav>
   <a href="/"><%= image_tag "lg1Lessbright.png", class: 'site_logo' %></a>
-  <% if !session[:user_id] %>
-    <a class="login">Log In</a>
-    <a class="reg">Register</a>
+  <% if current_user %>
+    <%= render partial: "layouts/signed_in" %>
   <% else %>
-    <a class="logout" href="/logout/">Logout</a>
+    <%= render partial: "layouts/signed_out" %>
   <% end %>
 </header>
 <% if flash[:register_notice] %>
@@ -45,39 +44,6 @@
   </article>
 </section>
 <div class="wrapper">
-  <section class="clearfix">
-    <article class="one_third reg_form">
-      <form action="/register/" method="post">
-        <!--<label for="username">Username:</label><br>-->
-        <input name="username" id="username" type="text" autofocus placeholder="Username"><br><br>
-        <!--<label for="password">Password:</label><br>-->
-        <input name="password" id="password" type="password" placeholder="Password"><br><br>
-        <button type="submit">Register</button>
-      </form>
-    </article>
-  </section>
-  <section class="clearfix">
-    <article class="one_third login_form">
-      <%= form_for User.new, url: signin_path, html: { class: "signin-form" } do |f| %>
-        <% f.object.errors.full_messages.each do |error| %>
-          <div class="errors">
-            <%= error %>
-          </div>
-        <% end %>
-        <div>
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-        <div>
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-        </div>
-        <div>
-          <%= f.submit "Login" %>
-        </div>
-      <% end %>
-    </article>
-  </section>
   <%= yield %>
   <footer class="one_third social_foot">
     <a href="https://twitter.com/lukemccomb" target="_blank"><%= image_tag "twitterlogo.png", class: 'social' %></a>
