@@ -1,17 +1,15 @@
 <% if session[:user_id] %>
   <section class="clearfix">
-    <article class="full_column">
         <h1>Recent</h1>
         <% @photos.each do |image| %>
-          <div class="image one_fourth">
+          <article class="image one_fourth">
             <%= image_tag "#{image.url}" %>
             <p><%= image.title %></p>
             <% if image.keywords != "{}" %>
               <p><%= image.keywords %></p>
             <% end %>
-          </div>
-        <% end %>
-    </article>
+          </article>
+  <% end %>
   </section>
 <% else %>
 <section class="clearfix">

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.4'
 gem 'pg', '~> 0.17.1'
 gem 'sass-rails', '~> 4.0.3'
@@ -17,7 +16,5 @@ group :test, :development do
   gem 'rspec-rails', '~> 3.0.2'
   gem 'capybara', '~> 2.4.1'
   gem 'launchy', '~> 2.4.2'
+  gem 'dotenv-rails', '~> 0.11.1'
 end
-
-
-
