@@ -3,7 +3,7 @@
         <h1>Recent</h1>
         <% @photos.each do |image| %>
           <article class="image one_fourth">
-            <%= image_tag "#{image.url}" %>
+            <%= link_to image_tag("#{image.url}"), "http://lukemccomb.com" %>
             <p><%= image.title %></p>
             <% if image.keywords != "{}" %>
               <p><%= image.keywords %></p>
