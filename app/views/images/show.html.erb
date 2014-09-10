@@ -1,0 +1,27 @@
+<div class="showimage">
+  <img src="<%= @image.url %>" alt=""/>
+  <h4><%= @image.title %></h4>
+  <% if @image.keywords != "{}" %>
+    <p><%= @image.keywords %></p>
+  <% end %>
+  <% if @image.comments.length > 0 %>
+    <h5>Comments</h5>
+    <%= @comments.each do |comment| %>
+      <div class="comment-card">
+        <p class="comment"><%= comment[:comment] %></p>
+        <p class="comment-created">on <%= comment[:created_at].asctime %></p>
+      </div>
+      <hr/>
+    <% end %>
+  <% else %>
+  <p>No Comments yet!</p>
+  <% end %>
+  <div class="comment-form">
+    <%= form_for [@image, @new_comment] do |form| %>
+      <br/>
+      <%= form.text_area :comment, :placeholder => "Type comment here..." %>
+      <br/><br/>
+      <%= form.submit :class => 'comment-submit' %>
+    <% end %>
+  </div>
+</div>

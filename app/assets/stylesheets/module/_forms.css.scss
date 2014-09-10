@@ -1,0 +1,133 @@
+.reg {
+  float: right;
+  margin-right: 30px;
+  margin-top: 20px;
+  cursor:pointer;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.60);
+  font-size: 120%;
+}
+
+.reg_form {
+  float: right;
+  display: none;
+  border-radius: 5px;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.60);
+  color: black;
+
+}
+
+.reg_form_view {
+  display: block;
+  float: right;
+  border-radius: 5px;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.60);
+  color: black;
+  margin-bottom: -30%;
+
+}
+
+.login {
+  float: right;
+  margin-top: 20px;
+  color: #ffffff;
+  display: block;
+  cursor:pointer;
+  user-select: none;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.60);
+  font-size: 120%;
+}
+
+.logout {
+  float: right;
+  padding: .5%;
+  margin-top: 1.15%;
+  display: block;
+  cursor:pointer;
+  font-size: 90%;
+  font-weight: 200;
+  background-color: #140203;
+  border-radius: 7%;
+}
+
+.login_form {
+  float: right;
+  display: none;
+  border-radius: 5px;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.60);
+  color: black;
+}
+
+.login_form_view {
+  display: block;
+  float: right;
+  border-radius: 5px;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.60);
+  color: black;
+  margin-bottom: -30%;
+
+}
+
+.reg_form_view input {
+  width: 100%;
+}
+
+.login_form_view input {
+  width: 100%;
+}
+
+#searchinput:focus {
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 1.0),
+  -5px 5px 5px rgba(255, 255, 255, 1.0),
+  5px -5px 5px rgba(255, 255, 255, 1.0),
+  -5px -5px 5px rgba(255, 255, 255, 1.0);
+  background-color: rgba(0, 0, 0, 0.50);
+  color: #ffffff;
+}
+
+.search_input {
+  width: 100%;
+  display: inline-block;
+  margin-top: 20%;
+  border-radius: 5px;
+}
+
+#searchinput {
+  width: 50%;
+  text-align: center;
+  left: 24.5%;
+  top: 80%;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.10);
+  font-size: 130%;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #51a9ff;
+}
+
+.flash {
+  position: fixed;
+  top: 48%;
+  color: #ffffff;
+  font-size: 150%;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.comment-form {
+  margin-left: auto;
+  color: black;
+  text-align: center;
+  .comment-submit {
+    color: white;
+    background-color: #51a9ff;
+  }
+}

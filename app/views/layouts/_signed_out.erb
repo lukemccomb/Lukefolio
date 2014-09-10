@@ -1,9 +1,7 @@
 <a class="login">Log In</a>
 <a class="reg">Register</a>
-
 <section class="clearfix">
   <article class="one_third reg_form">
-
     <%= form_for User.new, url: register_path, html: { class: "register-form" } do |f| %>
       <% f.object.errors.full_messages.each do |error| %>
         <div class="errors">

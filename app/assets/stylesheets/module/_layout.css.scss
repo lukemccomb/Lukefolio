@@ -1,0 +1,103 @@
+/* ----- =columns ----- */
+
+.one_half { width:460px; }
+.one_third {	 width:300px; }
+.two_third {	 width:620px; }
+.one_fourth {	 width:220px; }
+.three_fourth { width:700px; }
+.full_column {	 width: 100%; }
+
+/* ----- =structure ----- */
+
+body {
+  font-family: Helvetica, sans-serif;
+  width: 100%;
+  font-size: 110%;
+  background-image:
+  -webkit-gradient(linear, left top, right top, from(#0c0c0c), to(#082c81));
+  //why doesnt the below css work in my chrome?
+//  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+}
+
+.wrapper {
+  margin: 0 auto;
+  color: #ffffff;
+  max-width: 90%;
+}
+
+.site_header {
+  width: auto;
+  background-image: -webkit-gradient(linear, right top, left top, from(#0c0c0c), to(#b93504));;
+  min-height: 50px;
+  height: 05.8888889%;
+  padding: 0 12px 0 12px;
+  text-align: center;
+}
+
+input {
+  color: #51a9ff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+label {
+  color: #ffffff;
+}
+
+.site_logo {
+  width: 3.5%;
+  min-width: 45px;
+  height: auto;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  margin-left: auto;
+  border-radius: 4px;
+}
+
+.site_logo:hover {
+  box-shadow: -3px 2px 2px rgba(81, 169, 255, 0.8),
+  3px 3px 2px rgba(255, 15, 174, 0.80),
+  2px -3px 2px rgba(255, 251, 3, 0.80);
+}
+
+#right_float {
+  text-align: right;
+}
+
+#footer-cue {
+  position: fixed;
+  top: 45%;
+  left: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: .2%;
+  border-radius: 3px;
+}
+
+.footer-cue-hide {
+  position: fixed;
+  top: 45%;
+  left: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: .2%;
+  border-radius: 3px;
+  display: none;
+}
+
+.footer {
+  position: fixed;
+  top: 32.5%;
+  left: 3px;
+  display: none;
+  text-align: left;
+}
+
+.footer-view {
+  display: block;
+}
+
+.thumbgallery {
+  width: 90%;
+  padding-top: 30px;
+  margin: 0 auto;
+}

@@ -33,14 +33,15 @@ $(document).ready(function() {
   });
   //nav menu
   $(document).on("click", ".menu_logo", function() {
-    $('.about').removeClass('about_view');
     $('.nav_menu').toggleClass('nav_menu_view');
     items = 0;
   });
-  //about question mark
-  $(document).on("click", ".question_logo", function() {
-    $('.nav_menu').removeClass('nav_menu_view');
-    $('.about').toggleClass('about_view');
+  //social
+  $(document).on("mouseover", "#footer-cue", function() {
+    $('.footer').addClass('footer-view');
+    $('#footer-cue').addClass('footer-cue-hide');
+    $('.footer-view').slideToggle();
+    $('.footer-cue-hide').slideToggle();
     items = 0;
   });
 });
