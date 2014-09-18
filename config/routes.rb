@@ -10,8 +10,15 @@ Rails.application.routes.draw do
 
   get "/signout" => "sessions#destroy", as: :signout
 
+  get "/info" => "main#info"
+
   resources :images do
     resources :comments
+    resources :favorites
   end
+
+  resources :users do
+  end
+
 
 end

@@ -8,6 +8,13 @@ class CommentsController < ApplicationController
     redirect_to image_path(params[:image_id])
   end
 
+  def destroy
+    @image = Image.find(params[:image_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to @image
+  end
+
   private
 
   def allowed_parameters

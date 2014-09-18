@@ -2,14 +2,32 @@
   <img src="<%= @image.url %>" alt=""/>
   <h4><%= @image.title %></h4>
   <% if @image.keywords != "{}" %>
-    <p><%= @image.keywords %></p>
+    <p>Keywords: <%= @image.keywords %></p>
+  <% end %>
+
+  <% if @favorite.length > 0 %>
+    <div class="favoriting">
+      <%= form_for image_favorite_path(@image, current_user), method: :delete do |favorite| %>
+        <%= favorite.button 'Favorited!', class: "favorited" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="favoriting">
+      <%= form_for [@image, @new_favorite], html: { method: :create} do |favorite| %>
+          <%= favorite.button 'Click to Favorite', class: "favorite" %>
+      <% end %>
+    </div>
   <% end %>
   <% if @image.comments.length > 0 %>
     <h5>Comments</h5>
-    <%= @comments.each do |comment| %>
+    <% @comments.each do |comment| %>
       <div class="comment-card">
         <p class="comment"><%= comment[:comment] %></p>
+        <p class="comment-created">By <%= comment.user.email %></p>
         <p class="comment-created">on <%= comment[:created_at].asctime %></p>
+        <% if comment.user_id == current_user.id %>
+          <%= button_to "Delete Comment", image_comment_path(@image, comment.id), method: :delete, class: "delete-comment" %>
+        <% end %>
       </div>
       <hr/>
     <% end %>

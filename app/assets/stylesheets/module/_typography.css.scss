@@ -1,4 +1,4 @@
-div.wrapper h1 {
+.wrapper h1 {
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: auto;
   font-size: 700%;
@@ -8,12 +8,14 @@ div.wrapper h1 {
   font-weight: 100;
   margin-bottom: 5%;
   width: 100%;
-  :hover {
-    text-shadow: -7px 7px 3px rgba(81, 169, 255, 0.8),
-    7px 7px 3px rgba(255, 15, 174, 0.80),
-    0px -7px 3px rgba(255, 251, 3, 0.80);
-    color: #ffffff;
+  display: block;
 }
+
+h1:hover {
+  text-shadow: -7px 7px 3px rgba(81, 169, 255, 0.8),
+  7px 7px 3px rgba(255, 15, 174, 0.80),
+  0px -7px 3px rgba(255, 251, 3, 0.80);
+  color: #ffffff;
 }
 
 .welcome h2 {
@@ -107,5 +109,9 @@ h4 {
 }
 h5 {
   text-align: center;
-  color: rgba(185, 53, 4, 0.85);
+  color: rgba(24, 199, 255, 0.85);
+}
+
+.srchLukefolio h1 {
+  margin-top: 30%;
 }

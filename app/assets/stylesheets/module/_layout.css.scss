@@ -3,7 +3,7 @@
 .one_half { width:460px; }
 .one_third {	 width:300px; }
 .two_third {	 width:620px; }
-.one_fourth {	 width:220px; }
+.one_fourth {	 width: 17.5%; }
 .three_fourth { width:700px; }
 .full_column {	 width: 100%; }
 
@@ -13,10 +13,7 @@ body {
   font-family: Helvetica, sans-serif;
   width: 100%;
   font-size: 110%;
-  background-image:
-  -webkit-gradient(linear, left top, right top, from(#0c0c0c), to(#082c81));
-  //why doesnt the below css work in my chrome?
-//  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+  background-color: black;
 }
 
 .wrapper {
@@ -27,11 +24,12 @@ body {
 
 .site_header {
   width: auto;
-  background-image: -webkit-gradient(linear, right top, left top, from(#0c0c0c), to(#b93504));;
+  background-image: -webkit-gradient(linear, right top, left top, from(#119ac4), to(#000000));
   min-height: 50px;
   height: 05.8888889%;
   padding: 0 12px 0 12px;
   text-align: center;
+
 }
 
 input {
@@ -55,10 +53,12 @@ label {
   border-radius: 4px;
 }
 
+
 .site_logo:hover {
   box-shadow: -3px 2px 2px rgba(81, 169, 255, 0.8),
   3px 3px 2px rgba(255, 15, 174, 0.80),
   2px -3px 2px rgba(255, 251, 3, 0.80);
+  @include animation(scale 1.0s ease-in, slide 2.0s ease);
 }
 
 #right_float {
@@ -100,4 +100,13 @@ label {
   width: 90%;
   padding-top: 30px;
   margin: 0 auto;
+}
+
+p {
+  text-align: center;
+}
+
+.info {
+  margin-top: 10%;
+  line-height: 30px;
 }

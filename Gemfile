@@ -9,10 +9,13 @@ gem 'jquery-rails', '~> 3.1.1'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'cloudinary'
 gem 'bcrypt', '~> 3.1.7'
-gem 'flickr.rb'
-gem 'flickraw'
+# gem 'flickr.rb'
+# gem 'flickraw'
 gem 'bourbon'
+
+gem 'pry-debugger'
 
 group :test, :development do
   gem 'rspec-rails', '~> 3.0.2'

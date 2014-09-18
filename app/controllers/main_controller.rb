@@ -2,6 +2,10 @@ class MainController < ApplicationController
   def index
     @photos = Image.all
   end
+
+  def info
+
+  end
 end
 
 # create .env file

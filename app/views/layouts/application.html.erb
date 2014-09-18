@@ -32,9 +32,12 @@
 <% end %>
 
 <ul class="one_third nav_menu clearfix">
-  <a href="/search"><li>SEARCH</li></a>
-  <a href="/collections"><li>COLLECTIONS</li></a>
-  <a href="/cart"><li>CART</li></a>
+  <% if current_user %>
+    <%= link_to "Dashboard", user_path(current_user.id) %>
+    <br/>
+  <% end %>
+  <%= link_to "Blog", "http://lukemcblog.com" %><br/>
+  <%= link_to "Info", "/info" %><br/>
 </ul>
 <div class="wrapper">
   <%= yield %>

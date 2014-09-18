@@ -31,6 +31,7 @@ button:hover {
   box-shadow: -3px 2px 2px rgba(81, 169, 255, 0.8),
   3px 3px 2px rgba(255, 15, 174, 0.80),
   2px -3px 2px rgba(255, 251, 3, 0.80);
+
 }
 
 .social {
@@ -45,4 +46,52 @@ button:hover {
   box-shadow: -3px 2px 2px rgba(81, 169, 255, 0.80),
   3px 3px 2px rgba(255, 15, 174, 0.80),
   2px -3px 2px rgba(255, 251, 3, 0.80);
+}
+
+.login-btn {
+  background-color: #f04200;
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: auto;
+  display: block;
+  width: 50%;
+}
+
+.reg-btn {
+  background-color: #f04200;
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: auto;
+  display: block;
+  width: 50%;
+}
+
+.favorited {
+  margin: 0 auto;
+  background-color: yellow;
+  display: inline-block;
+}
+
+.favorite {
+  margin: 0 auto;
+  background-color: transparent;
+  display: inline-block;
+}
+
+.favoriting {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.delete-comment {
+  background-color: #c61d00;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  font-size: 75%;
+  margin-bottom: 2%;
+}
+
+.comment-submit {
+  margin-bottom: 2%;
 }
