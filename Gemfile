@@ -11,8 +11,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'cloudinary'
 gem 'bcrypt', '~> 3.1.7'
-# gem 'flickr.rb'
-# gem 'flickraw'
+gem 'flickr.rb'
+gem 'flickraw'
 gem 'bourbon'
 gem 'rails_12factor', group: :production
 
