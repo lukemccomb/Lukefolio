@@ -1,3 +1,5 @@
+# to run this task from the CLI on heroku, 'heroku run rake flickr:import FLICKER_KEY=XXXXXXXXXXXXXXXXX'
+
 namespace :flickr do
 
   def import_photos(photos)
