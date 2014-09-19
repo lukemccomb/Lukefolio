@@ -36,10 +36,19 @@
     <%= link_to "Dashboard", user_path(current_user.id) %>
     <br/>
   <% end %>
-  <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank" %><br/>
-  <%= link_to "Info", "/info" %><br/>
+  <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank" %>
+  <br/>
+  <%= link_to "Info", "/info" %>
+  <br/>
 </ul>
 <div class="wrapper">
+  <% if @user %>
+    <% @user.errors.full_messages.each do |error| %>
+      <div class="errors">
+        <%= error %>
+      </div>
+    <% end %>
+  <% end %>
   <%= yield %>
   <div id="footer-cue">&#10140</div>
   <footer class="footer one_third">

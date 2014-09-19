@@ -110,3 +110,14 @@ p {
   margin-top: 10%;
   line-height: 30px;
 }
+
+.errors {
+  color: red;
+  float: right;
+  display: inline-block;
+
+}
+
+.field_with_errors {
+  display: inline-block;
+}

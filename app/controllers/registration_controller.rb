@@ -3,7 +3,10 @@ class RegistrationController < ApplicationController
     @user = User.new
     @user.email = params[:user][:email]
     @user.password = params[:user][:password]
-    @user.save
-    redirect_to root_path
+    if @user.save
+      redirect_to root_path
+    else
+      render 'main/index'
+    end
   end
 end

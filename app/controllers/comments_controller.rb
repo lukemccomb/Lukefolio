@@ -8,6 +8,22 @@ class CommentsController < ApplicationController
     redirect_to image_path(params[:image_id])
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    @image = Image.find(params[:image_id])
+  end
+
+  def update
+    @image = Image.find(params[:image_id])
+    @comment = Comment.find(params[:id])
+    @comment.comment = params[:comment][:comment]
+    if @comment.save
+      redirect_to @image
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @image = Image.find(params[:image_id])
     @comment = Comment.find(params[:id])

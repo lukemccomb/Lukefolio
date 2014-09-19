@@ -2,12 +2,7 @@
 <a class="reg">Register</a>
 <section class="clearfix">
   <article class="one_third reg_form">
-    <%= form_for User.new, url: register_path, html: { class: "register-form" } do |f| %>
-      <% f.object.errors.full_messages.each do |error| %>
-        <div class="errors">
-          <%= error %>
-        </div>
-      <% end %>
+    <%= form_for @user, url: register_path, html: { class: "register-form" } do |f| %>
       <div>
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true %>
@@ -24,12 +19,7 @@
 </section>
 <section class="clearfix">
   <article class="one_third login_form">
-    <%= form_for User.new, url: signin_path, html: { class: "signin-form" } do |f| %>
-      <% f.object.errors.full_messages.each do |error| %>
-        <div class="errors">
-          <%= error %>
-        </div>
-      <% end %>
+    <%= form_for @user, url: signin_path, html: { class: "signin-form" } do |f| %>
       <div>
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true %>

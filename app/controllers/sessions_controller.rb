@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      @user = User.new(email: params[:user][:email])
+      @user = User.new
       @user.errors[:base] << "Username / password is invalid"
-      render :new
+      render "main/index"
     end
   end
 

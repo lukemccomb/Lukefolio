@@ -26,6 +26,7 @@
         <p class="comment-created">By <%= comment.user.email %></p>
         <p class="comment-created">on <%= comment[:created_at].asctime %></p>
         <% if comment.user_id == current_user.id %>
+          <%= button_to "Edit Comment", edit_image_comment_path(@image, comment.id), method: :get, class: "delete-comment" %>
           <%= button_to "Delete Comment", image_comment_path(@image, comment.id), method: :delete, class: "delete-comment" %>
         <% end %>
       </div>
