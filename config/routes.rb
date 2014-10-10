@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "/info" => "main#info"
 
+  get 'search', to: 'search#search'
+
   resources :images do
     resources :comments
     resources :favorites

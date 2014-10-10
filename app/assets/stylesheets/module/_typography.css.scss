@@ -9,13 +9,9 @@
   margin-bottom: 5%;
   width: 100%;
   display: block;
-}
-
-h1:hover {
-  text-shadow: -7px 7px 3px rgba(81, 169, 255, 0.8),
-  7px 7px 3px rgba(255, 15, 174, 0.80),
-  0px -7px 3px rgba(255, 251, 3, 0.80);
-  color: #ffffff;
+  &:hover {
+    @extend %text-shadow-cmy;
+  }
 }
 
 .welcome h2 {
@@ -61,8 +57,7 @@ a:visited {
 a:hover {
   color: #ffffff;
   text-decoration: none;
-  text-shadow: -5px 5px 2px rgba(81, 169, 255, 0.8), 5px 5px 2px rgba(255, 15, 174, 0.80), 0px -5px 2px rgba(255, 251, 3, 0.80);
-
+  @extend %text-shadow-cmy;
 }
 
 .pinklink:link {
@@ -81,7 +76,7 @@ a:hover {
 .pinklink:hover {
   color: #ffffff;
   text-decoration: none;
-  text-shadow: -5px 5px 2px rgba(81, 169, 255, 0.8), 5px 5px 2px rgba(255, 15, 174, 0.80), 0px -5px 2px rgba(255, 251, 3, 0.80);
+  @extend %text-shadow-cmy;
 
 }
 
@@ -101,9 +96,9 @@ a:hover {
 .bluelink:hover {
   color: #ffffff;
   text-decoration: none;
-  text-shadow: -5px 5px 2px rgba(81, 169, 255, 0.8), 5px 5px 2px rgba(255, 15, 174, 0.80), 0px -5px 2px rgba(255, 251, 3, 0.80);
-
+  @extend %text-shadow-cmy;
 }
+
 h4 {
   text-align: center;
 }

@@ -4,9 +4,7 @@
 }
 
 .image img:hover {
-  box-shadow: -4px 3px 3px rgba(81, 169, 255, 0.8),
-  4px 4px 3px rgba(255, 15, 174, 0.80),
-  3px -4px 3px rgba(255, 251, 3, 0.80);
+  @extend %extend;
 }
 
 .image {
