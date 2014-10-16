@@ -2,16 +2,15 @@
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: auto;
   font-size: 700%;
-  text-shadow: 2px -2px 2px rgba(255, 255, 255, 0.15),
-  2px 2px 2px rgba(0, 0, 0, 0.4);
   text-align: center;
   font-weight: 100;
   margin-bottom: 5%;
   width: 100%;
   display: block;
-  &:hover {
-    @extend %text-shadow-cmy;
-  }
+}
+
+.crazy-shadow {
+  @extend %text-shadow-cmy;
 }
 
 .welcome h2 {

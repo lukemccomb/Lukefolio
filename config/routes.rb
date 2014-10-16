@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "/info" => "main#info"
 
-  get 'search', to: 'search#search'
+  resource :search, only: [:show]
 
   resources :images do
     resources :comments

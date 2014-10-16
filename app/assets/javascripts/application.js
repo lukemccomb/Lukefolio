@@ -32,5 +32,11 @@ $(document).ready(function() {
   $(document).on("mouseout", ".footer", function() {
     $('.footer').hide('.footer');
     $('#footer-cue').show();
-  })
+  });
+  $(document).on("mouseover", "#color-magic", function() {
+    $("#color-magic").addClass('crazy-shadow');
+  });
+  $(document).on("mouseout", "#color-magic", function() {
+    $("#color-magic").removeClass('crazy-shadow');
+  });
 });
