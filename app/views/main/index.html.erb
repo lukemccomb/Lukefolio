@@ -1,7 +1,7 @@
 <% if session[:user_id] %>
   <%= form_for(:search, url: search_path, method: :get) do |form| %>
     <%= form.text_field :term %>
-    <%= form.submit "Search" %>
+    <%= form.submit %>
   <% end %>
 <section class="clearfix thumbgallery full_column">
   <% @photos.each do |image| %>

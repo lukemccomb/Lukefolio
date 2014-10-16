@@ -10,6 +10,17 @@ class ImagesController < ApplicationController
     @favorite = Favorite.where(image_id: @image.id, user_id: current_user.id)
   end
 
+  def update
+    image = Image.find(params[:id])
+    if image.keywords != "{}" && image.keywords != nil
+      image.keywords += ", " + params[:image][:keywords]
+    else
+      image.update_attributes(keywords: params[:image][:keywords])
+    end
+    image.save!
+    redirect_to image_path(params[:id])
+  end
+
   def destroy
     @image = Image.find(params[:id])
     @favorite = Favorite.where(image_id: @image.id, user_id: current_user.id)

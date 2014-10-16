@@ -4,7 +4,13 @@
   <% if @image.keywords != "{}" %>
     <p>Keywords: <%= @image.keywords %></p>
   <% end %>
-
+  <% if current_user.admin? %>
+    <h3>Add Keywords</h3>
+    <%= form_for @image, method: :put do |form| %>
+      <%= form.text_field :keywords, value: "", placeholder: "Add keyword and submit" %>
+      <%= form.submit %>
+    <% end %>
+  <% end %>
   <% if @favorite.length > 0 %>
     <div class="favoriting">
       <%= form_for image_favorite_path(@image, current_user), method: :delete do |favorite| %>
