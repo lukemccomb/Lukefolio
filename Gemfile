@@ -14,13 +14,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'flickr.rb'
 gem 'flickraw'
 gem 'bourbon'
-gem 'pry-debugger'
+
 
 group :test, :development do
   gem 'rspec-rails', '~> 3.0.2'
   gem 'capybara', '~> 2.4.1'
   gem 'launchy', '~> 2.4.2'
   gem 'dotenv-rails', '~> 0.11.1'
+  gem 'pry-debugger'
 end
 
 gem 'rails_12factor', group: :production
