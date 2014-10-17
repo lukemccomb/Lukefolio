@@ -9,7 +9,7 @@
   <% @photos.each do |image| %>
     <article class="image one_fourth">
       <a href="/images/<%= image.id %>" class="single-image">
-        <img src="<%= image.url %>"/>
+        <img src="<%= image.thumb %>"/>
       </a>
     </article>
   <% end %>

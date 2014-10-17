@@ -1,8 +1,14 @@
 <div class="showimage">
   <img src="<%= @image.url %>" alt=""/>
   <h4><%= @image.title %></h4>
-  <% if @image.keywords != "{}" %>
-    <p>Keywords: <%= @image.keywords %></p>
+  <% if @keywords != "{}" %>
+    <h3>Keywords:</h3>
+    <ul class="keywords">
+    <% @keywords.each do |keyword| %>
+      <li><%= keyword %></li>
+    <% end %>
+    </ul>
+    <hr/>
   <% end %>
   <% if current_user.admin? %>
     <div class="add-keywords">

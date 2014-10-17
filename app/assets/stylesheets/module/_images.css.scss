@@ -66,3 +66,12 @@
     border-radius: 5px;
   }
 }
+
+.keywords {
+  list-style: none;
+  text-align: center;
+  font-weight: light;
+  li {
+    line-height: 180%;
+  }
+}

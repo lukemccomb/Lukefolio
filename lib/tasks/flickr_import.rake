@@ -7,6 +7,7 @@ namespace :flickr do
       p image
       @db_image = Image.new
       @db_image.url = "https://farm#{image[:farm]}.staticflickr.com/#{image[:server]}/#{image[:id]}_#{image[:secret]}_b.jpg"
+      @db_image.thumb = "https://farm#{image[:farm]}.staticflickr.com/#{image[:server]}/#{image[:id]}_#{image[:secret]}_q.jpg"
       @db_image.title = image.title
       @db_image.keywords = "#{image.description}"
       @db_image.caption = "#{image.description}"

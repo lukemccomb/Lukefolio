@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
     @comments = Comment.where(image_id: @image.id).to_a
     @new_favorite = Favorite.new
     @favorite = Favorite.where(image_id: @image.id, user_id: current_user.id)
+    @keywords = keywords(@image)
   end
 
   def update
@@ -26,5 +27,12 @@ class ImagesController < ApplicationController
     @favorite = Favorite.where(image_id: @image.id, user_id: current_user.id)
     @favorite.destroy_all
     redirect_to image_path(params[:id])
+  end
+
+  private
+
+  def keywords image
+    string = image.keywords
+    keywords = string.split(", ")
   end
 end
