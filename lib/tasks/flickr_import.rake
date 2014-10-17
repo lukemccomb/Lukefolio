@@ -1,4 +1,4 @@
-# to run this task from the CLI on heroku, 'heroku run rake flickr:import FLICKER_KEY=XXXXXXXXXXXXXXXXX'
+# to run this task from the CLI on heroku, 'heroku run rake flickr:import FLICKR_KEY=XXXXXXXXXXXXXXXXX'
 
 namespace :flickr do
 

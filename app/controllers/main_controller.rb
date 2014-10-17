@@ -5,6 +5,6 @@ class MainController < ApplicationController
   end
 
   def info
-
+    @user = User.new
   end
 end
