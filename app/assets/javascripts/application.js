@@ -29,7 +29,10 @@ $(document).ready(function() {
     $('.footer').show('footer');
     $('#footer-cue').hide();
   });
-  $(document).on("mouseout", ".footer", function() {
+
+//  jQuery hover instead of mouse out
+
+  $(document).on("hover", ".footer", function() {
     $('.footer').hide('.footer');
     $('#footer-cue').show();
   });

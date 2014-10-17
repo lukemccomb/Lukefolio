@@ -5,11 +5,14 @@
     <p>Keywords: <%= @image.keywords %></p>
   <% end %>
   <% if current_user.admin? %>
-    <h3>Add Keywords</h3>
-    <%= form_for @image, method: :put do |form| %>
-      <%= form.text_field :keywords, value: "", placeholder: "Add keyword and submit" %>
-      <%= form.submit %>
-    <% end %>
+    <div class="add-keywords">
+      <h3>Add Keywords</h3>
+      <%= form_for @image, method: :put do |form| %>
+        <%= form.text_field :keywords, value: "", placeholder: "Add keywords separated by commas", class: 'keyword-input' %>
+        <br/>
+        <%= form.submit 'Add keywords', class: 'keyword-button' %>
+      <% end %>
+    </div>
   <% end %>
   <% if @favorite.length > 0 %>
     <div class="favoriting">

@@ -1,11 +1,28 @@
 /* ----- =columns ----- */
 
-.one_half { width:460px; }
-.one_third {	 width:300px; }
-.two_third {	 width:620px; }
-.one_fourth {	 width: 17.5%; }
-.three_fourth { width:700px; }
-.full_column {	 width: 100%; }
+.one_half {
+  width: 460px;
+}
+
+.one_third {
+  width: 300px;
+}
+
+.two_third {
+  width: 620px;
+}
+
+.one_fourth {
+  width: 17.5%;
+}
+
+.three_fourth {
+  width: 700px;
+}
+
+.full_column {
+  width: 100%;
+}
 
 /* ----- =structure ----- */
 
@@ -13,7 +30,7 @@ body {
   font-family: Helvetica, sans-serif;
   width: 100%;
   font-size: 110%;
-  background-color: black;
+  background: black;
 }
 
 .wrapper {
@@ -24,7 +41,7 @@ body {
 
 .site_header {
   width: auto;
-  background-image: -webkit-gradient(linear, right top, left top, from(#00b8ff), to(#000000));
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 184, 225, 1)), to(#000000));
   min-height: 50px;
   height: 05.8888889%;
   padding: 0 12px 0 12px;
@@ -52,7 +69,6 @@ label {
   margin-left: auto;
   border-radius: 4px;
 }
-
 
 .site_logo:hover {
   box-shadow: -3px 2px 2px rgba(81, 169, 255, 0.8),
