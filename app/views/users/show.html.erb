@@ -1,4 +1,5 @@
 <section class="clearfix thumbgallery full_column">
+  <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
 <% if @user.favorites.length > 0 %>
     <h3>Favorites</h3>
     <% @user.favorites.each do |favorite| %>

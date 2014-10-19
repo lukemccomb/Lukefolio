@@ -1,0 +1,11 @@
+<h3>Edit your profile</h3>
+
+<%= form_for @user, method: :patch do |form| %>
+  <%= form.label :name %><br/>
+  <%= form.text_field :name %><br/>
+  <%= form.label :email %><br/>
+  <%= form.text_field :email %><br/>
+  <%= form.label :password %><br/>
+  <%= form.password_field :password %><br/>
+  <%= form.submit "Update Profile", class: "user-update" %>
+<% end %>
