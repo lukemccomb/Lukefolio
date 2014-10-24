@@ -25,6 +25,7 @@ button:hover {
   border-radius: 3px;
   padding: 4px 4px 4px 6px;
   cursor:pointer;
+  background-color: #001aa5;
 }
 
 .menu_logo:hover {
@@ -66,12 +67,16 @@ button:hover {
   margin: 0 auto;
   background-color: yellow;
   display: inline-block;
+  margin-top: 5%;
+  color: red;
 }
 
 .favorite {
   margin: 0 auto;
-  background-color: transparent;
+  background-color: red;
+  margin-top: 5%;
   display: inline-block;
+  color: #001aa5;;
 }
 
 .favoriting {
@@ -103,4 +108,16 @@ button:hover {
   color: #ffffff;
   width: 20%;
   margin-top: 2%;
+}
+
+.logout {
+  float: right;
+  padding: .5%;
+  margin-top: 1.15%;
+  display: block;
+  cursor:pointer;
+  font-size: 90%;
+  font-weight: 200;
+  background-color: #001aa5;
+  border-radius: 7%;
 }

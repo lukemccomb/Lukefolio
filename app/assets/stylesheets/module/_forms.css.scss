@@ -4,8 +4,8 @@
   margin-top: 20px;
   margin-left: -6%;
   cursor:pointer;
-  color: #ffffff;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.60);
+  color: #001aa5;
+  text-shadow: 2px 2px 2px #fff9ca;
   font-size: 120%;
 }
 
@@ -14,7 +14,7 @@
   display: none;
   border-radius: 5px;
   padding: 2%;
-  background-color: rgba(0, 0, 0, 0.60);
+  background-color: #001aa5;
   color: black;
 
 }
@@ -24,7 +24,7 @@
   float: right;
   border-radius: 5px;
   padding: 2%;
-  background-color: rgba(0, 0, 0, 0.60);
+  background-color: #001aa5;
   color: black;
   margin-bottom: -30%;
 
@@ -33,24 +33,12 @@
 .login {
   float: right;
   margin-top: 20px;
-  color: #ffffff;
+  color: #001aa5;
   display: block;
   cursor:pointer;
   user-select: none;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.60);
+  text-shadow: 2px 2px 2px #fff9ca;
   font-size: 120%;
-}
-
-.logout {
-  float: right;
-  padding: .5%;
-  margin-top: 1.15%;
-  display: block;
-  cursor:pointer;
-  font-size: 90%;
-  font-weight: 200;
-  background-color: #140203;
-  border-radius: 7%;
 }
 
 .login_form {
@@ -58,8 +46,8 @@
   display: none;
   border-radius: 5px;
   padding: 2%;
-  background-color: rgba(0, 0, 0, 0.60);
-  color: black;
+  background-color: #001aa5;
+  color: #ffffff;
 }
 
 .login_form_view {
@@ -67,8 +55,8 @@
   float: right;
   border-radius: 5px;
   padding: 2%;
-  background-color: rgba(0, 0, 0, 0.60);
-  color: black;
+  background-color: #001aa5;
+  color: #ffffff;
   margin-bottom: -30%;
 
 }
@@ -79,13 +67,16 @@
 
 .login_form_view input {
   width: 100%;
+  display: inline-block;
 }
 
 .search {
   text-align: center;
   display: inline-block;
   width: 100%;
-  margin: 5% auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
 }
 
 #search_term:focus {
@@ -93,7 +84,7 @@
   -5px 5px 5px rgba(255, 255, 255, 1.0),
   5px -5px 5px rgba(255, 255, 255, 1.0),
   -5px -5px 5px rgba(255, 255, 255, 1.0);
-  background-color: rgba(0, 0, 0, 0.50);
+  background-color: #001aa5;
   color: #ffffff;
 }
 
@@ -105,11 +96,14 @@
 }
 
 .search-button {
-  background-color: #ffffff;
+  background-color: #ff4e24;
+  color: #001aa5;
+  display: block;
+  margin: 2% auto;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-  color: #51a9ff;
+  color: #001aa5;
 }
 
 .flash {

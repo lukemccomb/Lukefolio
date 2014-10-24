@@ -4,11 +4,14 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
-    @new_comment = Comment.new
-    @comments = Comment.where(image_id: @image.id).to_a
-    @new_favorite = Favorite.new
-    @favorite = Favorite.where(image_id: @image.id, user_id: current_user.id)
     @keywords = keywords(@image)
+    if current_user
+      @new_comment = Comment.new
+      @comments = Comment.where(image_id: @image.id).to_a
+      @new_favorite = Favorite.new
+      @favorite = Favorite.where(image_id: @image.id, user_id: current_user.id)
+    end
+    @user = User.new
   end
 
   def update

@@ -1,24 +1,15 @@
-<% if session[:user_id] %>
-  <div class="search">
-    <%= form_for(:search, url: search_path, method: :get) do |form| %>
-      <%= form.text_field :term %>
-      <%= form.submit "Search", class: 'search-button' %>
-    <% end %>
-  </div>
-<section class="clearfix thumbgallery full_column">
-  <% @photos.each do |image| %>
-    <article class="image one_fourth">
-      <a href="/images/<%= image.id %>" class="single-image">
-        <img src="<%= image.thumb %>"/>
-      </a>
-    </article>
+<div class="search">
+  <%= form_for(:search, url: search_path, method: :get) do |form| %>
+    <%= form.text_field :term, placeholder: "Enter a search term like Colorado or Dog" %>
+    <%= form.submit "Search", class: 'search-button', id: 'search-button' %>
   <% end %>
-</section>
-<% else %>
-<section class="clearfix">
-  <article class="full_column">
-    <h1 id="color-magic">Luke McComb</h1>
-    <p>Register with your email or log in as user@example.com / Password: password</p>
+</div>
+<section class="clearfix thumbgallery full_column">
+<% @photos.each do |image| %>
+  <article class="image one_fourth">
+    <a href="/images/<%= image.id %>" class="single-image">
+      <img src="<%= image.thumb %>"/>
+    </a>
   </article>
-</section>
 <% end %>
+</section>

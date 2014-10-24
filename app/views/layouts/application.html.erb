@@ -15,9 +15,9 @@
   </nav>
   <a href="/"><%= image_tag "lg1Lessbright.png", class: 'site_logo' %></a>
   <% if current_user %>
-    <%= render partial: "layouts/signed_in" %>
+    <%= render partial: "main/signed_in" %>
   <% else %>
-    <%= render partial: "layouts/signed_out" %>
+    <%= render partial: "main/signed_out" %>
   <% end %>
 </header>
 

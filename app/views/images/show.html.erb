@@ -10,7 +10,7 @@
     </ul>
     <hr/>
   <% end %>
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <div class="add-keywords">
       <h3>Add Keywords</h3>
       <%= form_for @image, method: :put do |form| %>
@@ -20,18 +20,22 @@
       <% end %>
     </div>
   <% end %>
-  <% if @favorite.length > 0 %>
-    <div class="favoriting">
-      <%= form_for image_favorite_path(@image, current_user), method: :delete do |favorite| %>
-        <%= favorite.button 'Favorited!', class: "favorited" %>
-      <% end %>
-    </div>
+  <% if current_user != nil %>
+    <% if @favorite.length > 0 %>
+      <div class="favoriting">
+        <%= form_for image_favorite_path(@image, current_user), method: :delete do |favorite| %>
+          <%= favorite.button 'Favorited!', class: "favorited" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="favoriting">
+        <%= form_for [@image, @new_favorite], html: { method: :create} do |favorite| %>
+            <%= favorite.button 'Click to Favorite', class: "favorite" %>
+        <% end %>
+      </div>
+    <% end %>
   <% else %>
-    <div class="favoriting">
-      <%= form_for [@image, @new_favorite], html: { method: :create} do |favorite| %>
-          <%= favorite.button 'Click to Favorite', class: "favorite" %>
-      <% end %>
-    </div>
+    <p>Register and Log In to Favorite</p>
   <% end %>
   <% if @image.comments.length > 0 %>
     <h5>Comments</h5>
@@ -50,12 +54,16 @@
   <% else %>
   <p>No Comments yet!</p>
   <% end %>
-  <div class="comment-form">
-    <%= form_for [@image, @new_comment] do |form| %>
-      <br/>
-      <%= form.text_area :comment, :placeholder => "Type comment here..." %>
-      <br/><br/>
-      <%= form.submit :class => 'comment-submit' %>
-    <% end %>
-  </div>
+  <% if current_user %>
+    <div class="comment-form">
+      <%= form_for [@image, @new_comment] do |form| %>
+        <br/>
+        <%= form.text_area :comment, :placeholder => "Type comment here..." %>
+        <br/><br/>
+        <%= form.submit :class => 'comment-submit' %>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Register and Log In to comment</p>
+  <% end %>
 </div>

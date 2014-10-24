@@ -30,7 +30,7 @@ body {
   font-family: Helvetica, sans-serif;
   width: 100%;
   font-size: 110%;
-  background: black;
+  background: #ffffff;
 }
 
 .wrapper {
@@ -41,12 +41,12 @@ body {
 
 .site_header {
   width: auto;
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 184, 225, 1)), to(#000000));
+//  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 184, 225, 1)), to(#000000));
+  background-color: #ffffff;
   min-height: 50px;
   height: 05.8888889%;
   padding: 0 12px 0 12px;
   text-align: center;
-
 }
 
 input {
@@ -66,7 +66,8 @@ label {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 2px;
-  margin-left: auto;
+  margin-left: 1%;
+  margin-right: 0;
   border-radius: 4px;
 }
 
@@ -122,6 +123,10 @@ p {
 .info {
   margin-top: 10%;
   line-height: 30px;
+  color: #0028ff;
+  .mail-to {
+    color: red;
+  }
 }
 
 .errors {

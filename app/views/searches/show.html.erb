@@ -1,3 +1,10 @@
+<div class="search">
+  <%= form_for(:search, url: search_path, method: :get) do |form| %>
+    <%= form.text_field :term, placeholder: "Enter a search term like Colorado or Dog" %>
+    <%= form.submit "Search", class: 'search-button', id: 'search-button' %>
+  <% end %>
+</div>
+
 <h1><%= @search.term %></h1>
 
 <%= render @search.images %>
