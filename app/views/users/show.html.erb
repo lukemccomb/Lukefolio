@@ -3,7 +3,7 @@
 <% if @user.favorites.length > 0 %>
     <h3>Favorites</h3>
     <% @user.favorites.each do |favorite| %>
-      <a href="/images/<%= favorite.image.id %>" class="single-image">
+      <a href="/images/<%= favorite.image_id %>" class="single-image">
         <article class="image one_fourth">
           <img src="<%= favorite.image.url %>"/>
         </article>
