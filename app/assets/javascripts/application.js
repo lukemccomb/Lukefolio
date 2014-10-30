@@ -42,4 +42,6 @@ $(document).ready(function() {
   $(document).on("mouseout", "#color-magic", function() {
     $("#color-magic").removeClass('crazy-shadow');
   });
+
+
 });

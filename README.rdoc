@@ -1,28 +1,13 @@
-== README
+== LUKEFOLIO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails application which pulls my photographs from my Flickr account using their API.
 
-Things you may want to cover:
+Users can comment on and favorite images.
 
-* Ruby version
+Future functionality:
 
-* System dependencies
+*Ability to share images on Twitter from individual image views.
 
-* Configuration
+*Lightbox functionality which allows slideshow viewing of images.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+*Mobile design
