@@ -1,7 +1,15 @@
-<p class="info">
-  I'm currently a student of gSchool by Galvanize learning how to develop web applications using <br/>
-  Ruby, Ruby on Rails, JavaScript, HTML5, CSS3/SCSS, Postgress, ActiveRecord, Agile and Test-Drive Development. <br/>
-  I come from a photography & design background and I love the outdoors. <br/>
-  I'm currently searching for employment as a Full Stack Developer. <br/>
-  Contact me at <%= mail_to "lucasmccomb@gmail.com", name = nil, html_options = { class: 'mail-to'} %>
-</p>
+<div class="info-wrapper">
+  <div class="one_fourth head-shot-wrapper">
+    <%= image_tag "luke_mccomb.jpg", :class => "head-shot" %>
+  </div>
+
+  <p class="info">
+    My name is Luke and I develop software for the web, take pictures and explore the great outdoors.<br />
+    I live in Boulder, CO and work at a digital agency by the name of <%= link_to "Mondo Robot", "http://www.mondorobot.com/#/home", :target => "_blank" %>.
+    I'm from the <%= link_to "Constitution State", "http://ctstatelibrary.org/CT-nicknames", :target => "_blank" %> originally.<br />
+
+    I attended the <%= link_to "S.I. Newhouse School", "http://newhouse.syr.edu/", :target => "_blank" %> at Syracuse University where I received a Bachelors degree in Visual and Interactive Communications with a focus on photography. In June of 2014 I enrolled in Galvanize's <%= link_to "full stack web development training course", "http://www.galvanize.com/courses/full-stack/#.VeyONNNViko", :target => "_blank"%> where I learned how to develop software using technologies such as Ruby on Rails and JavaScript.<br />
+
+    Feel free to reach out to me at <%= mail_to "lucasmccomb@gmail.com", name = nil, html_options = { class: 'mail-to'} %> with feedback or questions. Thanks for checking out my site!
+  </p>
+</div>

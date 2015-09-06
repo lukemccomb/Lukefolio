@@ -56,7 +56,7 @@ input {
 }
 
 label {
-  color: #ffffff;
+  color: #000;
 }
 
 .site_logo {
@@ -69,13 +69,6 @@ label {
   margin-left: 1%;
   margin-right: 0;
   border-radius: 4px;
-}
-
-.site_logo:hover {
-  box-shadow: -3px 2px 2px rgba(81, 169, 255, 0.8),
-  3px 3px 2px rgba(255, 15, 174, 0.80),
-  2px -3px 2px rgba(255, 251, 3, 0.80);
-  @include animation(scale 1.0s ease-in, slide 2.0s ease);
 }
 
 #right_float {
@@ -111,9 +104,6 @@ label {
 }
 
 .thumbgallery {
-//  width: 90%;
-//  padding-top: 30px;
-//  margin: 0 auto;
   @include outer-container;
 }
 
@@ -122,9 +112,11 @@ p {
 }
 
 .info {
-  margin-top: 10%;
+  color: #000;
   line-height: 30px;
-  color: #0028ff;
+  margin-top: 10%;
+  text-align: left;
+
   .mail-to {
     color: red;
   }
@@ -132,11 +124,25 @@ p {
 
 .errors {
   color: red;
-  float: right;
   display: inline-block;
-
+  float: right;
 }
 
 .field_with_errors {
   display: inline-block;
+}
+
+.head-shot {
+  max-width: 100%;
+}
+
+.info-wrapper {
+  margin-top: 4rem;
+}
+
+.head-shot-wrapper {
+  display: inline-block;
+  float: left;
+  margin-left: 2rem;
+  margin-right: 5rem;
 }

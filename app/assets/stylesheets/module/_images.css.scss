@@ -3,11 +3,6 @@
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
 }
 
-.image img:hover {
-  @extend %extend;
-}
-
-
 .image {
   display: inline-block;
   padding-right: 1%;
@@ -35,28 +30,34 @@
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+
   img {
     display: block;
     margin: 0 auto;
     width: auto;
     box-shadow: 3px 3px 3px white, -3px -3px 3px white;
   }
+
   p {
     text-align: center;
-    color: #0022d1;
+    color: #000;
   }
+
   .comment {
     font-size: 90%;
   }
+
   .comment-created {
     font-size: 80%;
-    color: #001aa5;
+    color: #000;
   }
+
   hr {
     width: 20%;
   }
+
   .comment-card {
-    color: #ffffff;
+    color: #000;
     background-color: rgba(255, 255, 255, 0.2);
     width: 30%;
     display: block;
@@ -70,7 +71,7 @@
   list-style: none;
   text-align: center;
   font-weight: light;
-  color:  #001aa5;
+  color:  #000;
   li {
     line-height: 180%;
   }

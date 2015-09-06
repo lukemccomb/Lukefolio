@@ -1,53 +1,51 @@
 .reg {
+  color: #000;
+  cursor:pointer;
   float: right;
+  font-size: 120%;
+  margin-left: -6%;
   margin-right: 30px;
   margin-top: 20px;
-  margin-left: -6%;
-  cursor:pointer;
-  color: #001aa5;
-  text-shadow: 2px 2px 2px #fff9ca;
-  font-size: 120%;
 }
 
 .reg_form {
-  float: right;
-  display: none;
+  background-color: #000;
   border-radius: 5px;
+  color: #FFF;
+  display: none;
+  float: right;
   padding: 2%;
-  background-color: #001aa5;
-  color: black;
-
 }
 
 .reg_form_view {
+  color: #000;
+  background-color: rgba(#000, 0.25);
+  border-radius: 5px;
   display: block;
   float: right;
-  border-radius: 5px;
-  padding: 2%;
-  background-color: #001aa5;
-  color: black;
   margin-bottom: -30%;
-
+  padding: 2%;
+  position: relative;
+  z-index: 1;
 }
 
 .login {
-  float: right;
-  margin-top: 20px;
-  color: #001aa5;
+  color: #000;
+  cursor: pointer;
   display: block;
-  cursor:pointer;
-  user-select: none;
-  text-shadow: 2px 2px 2px #fff9ca;
+  float: right;
   font-size: 120%;
+  margin-top: 20px;
+  user-select: none;
 }
 
 .login_form {
-  float: right;
-  display: none;
+  background-color: rgba(#000, 0.25);
   border-radius: 5px;
+  color: #000;
+  display: none;
+  float: right;
   padding: 2%;
-  background-color: #001aa5;
-  color: #ffffff;
 }
 
 .login_form_view {
@@ -55,10 +53,11 @@
   float: right;
   border-radius: 5px;
   padding: 2%;
-  background-color: #001aa5;
+  background-color: rgba(#000, 0.25);
   color: #ffffff;
   margin-bottom: -30%;
-
+  position: relative;
+  z-index: 1;
 }
 
 .reg_form_view input {
@@ -86,30 +85,29 @@
   text-align: center;
   background-color: rgba(255, 255, 255, 0.90);
   font-size: 130%;
-  box-shadow: 2px 2px 2px #ff4e24;
   &:focus {
-    background-color: #001aa5;
-    color: #ffffff;
+    background-color: #FFF;
+    border: none;
+    box-shadow: none;
+    color: #000;
     font-weight: lighter;
   }
 }
 
 .search-button {
-  background-color: #ff4e24;
-  color: #001aa5;
+  background-color: #000;
+  color: #FFF;
   display: block;
   margin: 2% auto;
   border: 1px solid grey;
-  box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.5);
   &:hover {
-    background-color: #001aa5;
-    color: white;
-    box-shadow: 2px 2px 2px #ff4e24;
+    background-color: #FFF;
+    color: #000;
   }
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-  color: #001aa5;
+  color: #000;
 }
 
 .flash {
@@ -126,11 +124,11 @@
 
 .comment-form {
   margin-left: auto;
-  color: black;
+  color: #000;
   text-align: center;
   .comment-submit {
-    color: white;
-    background-color: #51a9ff;
+    color: #FFF;
+    background-color: #000;
   }
 }
 
