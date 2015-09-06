@@ -1,31 +1,20 @@
 .wrapper h1 {
-  color: rgba(0, 34, 209, 1.0);
-  letter-spacing: auto;
-  font-size: 700%;
-  text-align: center;
+  color: #000;
+  display: block;
+  font-size: 500%;
   font-weight: 100;
+  letter-spacing: auto;
   margin-bottom: 3%;
   margin-top: 0;
+  text-align: center;
   width: 100%;
-  display: block;
-}
-
-.crazy-shadow {
-  @extend %text-shadow-cmy;
-}
-
-.welcome h2 {
-  text-align: left;
-  font-size: 200%;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.30);
-  color: rgba(255, 251, 3, 0.95);
 }
 
 div.wrapper h3 {
-  color: #001aa5;
+  color: #000;
   letter-spacing: 2px;
   font-size: 100%;
-//  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.30);
+ text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.30);
   text-align: center;
   font-weight: 500;
   margin-right: auto;
@@ -35,68 +24,27 @@ div.wrapper h3 {
 
 .welcome h3 {
   text-align: left;
-  color: #ffffff;
+  color: #000;
   font-size: 130%;
   line-height: 110%;
-  text-shadow: 2px 4px 2px rgb(0, 38, 255);
 }
 
 a:link {
-  color: #FFFFFF;
+  color: #000;
   text-decoration: none;
   user-select: none;
 
 }
 
 a:visited {
-  color: #FFFFFF;
+  color: #000;
   text-decoration: none;
   user-select: none;
 }
 
 a:hover {
-  color: white;
+  color: rgb(157, 157, 157);
   text-decoration: none;
-  @extend %text-shadow-cmy;
-}
-
-.pinklink:link {
-  color: rgb(255, 15, 174);
-  text-decoration: none;
-  user-select: none;
-
-}
-
-.pinklink:visited {
-  color: rgb(0, 26, 165);
-  text-decoration: none;
-  user-select: none;
-}
-
-.pinklink:hover {
-  color: #001aa5;
-  text-decoration: none;
-  @extend %text-shadow-cmy;
-
-}
-
-.bluelink:link {
-  color: rgb(0, 26, 165);
-  text-decoration: none;
-  user-select: none;
-
-}
-
-.bluelink:visited {
-  color: rgb(0, 26, 165);
-  text-decoration: none;
-  user-select: none;
-}
-
-.bluelink:hover {
-  color: #001aa5;
-  text-decoration: none;
-  @extend %text-shadow-cmy;
 }
 
 h4 {
@@ -104,9 +52,5 @@ h4 {
 }
 h5 {
   text-align: center;
-  color: rgba(0, 26, 165, 0.85);
-}
-
-.srchLukefolio h1 {
-  margin-top: 30%;
+  color: #000;
 }

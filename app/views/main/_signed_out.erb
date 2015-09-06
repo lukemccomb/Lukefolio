@@ -1,7 +1,7 @@
 <a class="login">Log In</a>
 <a class="reg">Register</a>
 <section class="clearfix">
-  <article class="one_third reg_form" id="reg-form">
+  <div class="one_third reg_form" id="reg-form">
     <%= form_for @user, url: register_path, html: { class: "register-form" } do |f| %>
       <div>
         <%= f.label :email %>
@@ -15,10 +15,10 @@
         <%= f.submit "Register", class: 'reg-btn' %>
       </div>
     <% end %>
-  </article>
+  </div>
 </section>
 <section class="clearfix">
-  <article class="one_third login_form" id="login-form">
+  <div class="one_third login_form" id="login-form">
     <%= form_for @user, url: signin_path, html: { class: "signin-form" } do |f| %>
       <div>
         <%= f.label :email %>
@@ -32,5 +32,5 @@
         <%= f.submit "Login", class: 'login-btn' %>
       </div>
     <% end %>
-  </article>
+  </div>
 </section>

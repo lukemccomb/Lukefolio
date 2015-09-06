@@ -6,10 +6,10 @@
 </div>
 <section class="clearfix thumbgallery full_column">
 <% @photos.each do |image| %>
-  <article class="image">
+  <div class="image one_fourth">
     <a href="/images/<%= image.id %>" class="single-image">
       <img src="<%= image.thumb %>"/>
     </a>
-  </article>
+  </div>
 <% end %>
 </section>

@@ -4,7 +4,5 @@
     <%= form.submit "Search", class: 'search-button', id: 'search-button' %>
   <% end %>
 </div>
-
-<h1><%= @search.term %></h1>
-
+<h2><%= @search.term %></h2>
 <%= render @search.images %>

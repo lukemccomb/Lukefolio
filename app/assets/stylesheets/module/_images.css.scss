@@ -3,47 +3,15 @@
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
 }
 
-.image img:hover {
-  @extend %extend;
-}
-
-
-
-//$tablet-sml: new-breakpoint(max-width 800px 12);
-$mobile: new-breakpoint(max-width 480px 4);
-//$tablet: new-breakpoint(max-width 1024px 12);
-
 .image {
-//  display: inline-block;
-//  padding-right: 1%;
-//  padding-left: 1%;
-//  margin: .5% auto;
-//  max-height: 140px;
-//  overflow: hidden;
-  @include span-columns(2);
-  @include omega(6n);
-
-//  @include media($tablet-lrg) {
-//    @include span-columns(3);
-//    @include omega(4n);
-//  }
-
-
-
-  @include media($mobile) {
-    @include span-columns(2);
-    @include omega(2n);
-  }
-
-//  @include media($tablet) {
-//    @include span-columns(3);
-//    @include omega(4n);
-//  }
+  display: inline-block;
+  padding-right: 1%;
+  padding-left: 1%;
+  margin: .5% auto;
+  max-height: 140px;
+  overflow: hidden;
 }
 
-.image:hover {
-  @include animation(scale 1.0s ease-in, slide 2.0s ease);
-}
 
 .centergif {
   margin-top: 40px;
@@ -62,28 +30,34 @@ $mobile: new-breakpoint(max-width 480px 4);
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+
   img {
     display: block;
     margin: 0 auto;
     width: auto;
     box-shadow: 3px 3px 3px white, -3px -3px 3px white;
   }
+
   p {
     text-align: center;
-    color: #0022d1;
+    color: #000;
   }
+
   .comment {
     font-size: 90%;
   }
+
   .comment-created {
     font-size: 80%;
-    color: #001aa5;
+    color: #000;
   }
+
   hr {
     width: 20%;
   }
+
   .comment-card {
-    color: #ffffff;
+    color: #000;
     background-color: rgba(255, 255, 255, 0.2);
     width: 30%;
     display: block;
@@ -97,7 +71,7 @@ $mobile: new-breakpoint(max-width 480px 4);
   list-style: none;
   text-align: center;
   font-weight: light;
-  color:  #001aa5;
+  color:  #000;
   li {
     line-height: 180%;
   }

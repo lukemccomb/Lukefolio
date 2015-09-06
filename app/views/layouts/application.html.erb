@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Lukefolio</title>
-  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <link rel="shortcut icon" href="http://lukemccomb.com/images/favicon.ico">
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>Lukefolio</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="shortcut icon" href="http://lukemccomb.com/images/favicon.ico">
+    <%= csrf_meta_tags %>
+  </head>
 <body>
-
-<header class="site_header clearfix">
-  <nav>
-    <%= image_tag "menu.png", class: 'menu_logo' %>
-  </nav>
-  <a href="/"><%= image_tag "lg1Lessbright.png", class: 'site_logo' %></a>
-  <% if current_user %>
-    <%= render partial: "main/signed_in" %>
-  <% else %>
-    <%= render partial: "main/signed_out" %>
-  <% end %>
-</header>
-
-<% if flash[:register_notice] %>
-  <p class="flash"><%= flash[:register_notice] %></p>
-<% end %>
-<% if flash[:reg_fail] %>
-  <p class="flash"><%= flash[:reg_fail] %></p>
-<% end %>
-<% if flash[:login_fail] %>
-  <p class="flash"><%= flash[:login_fail] %></p>
-<% end %>
-
-<ul class="one_third nav_menu clearfix">
-  <% if current_user %>
-    <%= link_to "Dashboard", user_path(current_user.id) %>
-    <br/>
-  <% end %>
-  <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank" %>
-  <br/>
-  <%= link_to "Info", "/info" %>
-  <br/>
-</ul>
-<div class="wrapper">
-  <% if @user %>
-    <% @user.errors.full_messages.each do |error| %>
-      <div class="errors">
-        <%= error %>
-      </div>
+  <header class="site_header clearfix">
+    <a>
+      <%= image_tag "menu.png", class: 'menu_logo' %>
+    </a>
+    <a href="/"><%= image_tag "lg1Lessbright.png", class: 'site_logo' %></a>
+    <% if current_user %>
+      <%= render partial: "main/signed_in" %>
+    <% else %>
+      <%= render partial: "main/signed_out" %>
     <% end %>
+  </header>
+
+  <% if flash[:register_notice] %>
+    <p class="flash"><%= flash[:register_notice] %></p>
   <% end %>
-  <%= yield %>
-  <div id="footer-cue">&#10140</div>
-  <footer class="footer one_third">
-    <a href="https://twitter.com/lukemccomb" target="_blank"><%= image_tag "twitterlogo.png", class: 'social' %></a><br/><br/>
-    <a href="https://github.com/lukemccomb" target="_blank"><%= image_tag "githublogo.png", class: 'social' %></a><br/><br/>
-    <a href="http://www.galvanize.it/school/#main" target="_blank"><%= image_tag "galvanizelogo.png", class: 'social' %></a><br/><br/>
-    <a href="http://lukemcblog.com/" target="_blank"><%= image_tag "tumblrlogo.png", class: 'social' %></a><br/><br/>
-    <a href="http://instagram.com/mcluukin" target="_blank"><%= image_tag "instalogo.png", class: 'social' %></a><br/><br/>
-    <a href="http://soundcloud.com/luukin/" target="_blank"><%= image_tag "soundcloudlogo.png", class: 'social' %></a><br/><br/>
-    <a href="http://hypem.com/luukin" target="_blank"><%= image_tag "hypelogo.png", class: 'social' %></a><br/><br/>
-  </footer>
-</div>
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</body>
+  <% if flash[:reg_fail] %>
+    <p class="flash"><%= flash[:reg_fail] %></p>
+  <% end %>
+  <% if flash[:login_fail] %>
+    <p class="flash"><%= flash[:login_fail] %></p>
+  <% end %>
+
+  <ul class="one_third nav_menu clearfix">
+    <% if current_user %>
+      <%= link_to "Dashboard", user_path(current_user.id) %>
+      <br/>
+    <% end %>
+    <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank" %>
+    <br/>
+    <%= link_to "Info", "/info" %>
+    <br/>
+  </ul>
+  <div class="wrapper">
+    <% if @user %>
+      <% @user.errors.full_messages.each do |error| %>
+        <div class="errors">
+          <%= error %>
+        </div>
+      <% end %>
+    <% end %>
+    <%= yield %>
+    <div id="footer-cue">&#10140</div>
+    <footer class="footer one_third">
+      <a href="https://twitter.com/lukemccomb" target="_blank"><%= image_tag "twitterlogo.png", class: 'social' %></a><br/><br/>
+      <a href="https://github.com/lukemccomb" target="_blank"><%= image_tag "githublogo.png", class: 'social' %></a><br/><br/>
+      <a href="http://www.galvanize.it/school/#main" target="_blank"><%= image_tag "galvanizelogo.png", class: 'social' %></a><br/><br/>
+      <a href="http://lukemcblog.com/" target="_blank"><%= image_tag "tumblrlogo.png", class: 'social' %></a><br/><br/>
+      <a href="http://instagram.com/mcluukin" target="_blank"><%= image_tag "instalogo.png", class: 'social' %></a><br/><br/>
+      <a href="http://soundcloud.com/luukin/" target="_blank"><%= image_tag "soundcloudlogo.png", class: 'social' %></a><br/><br/>
+      <a href="http://hypem.com/luukin" target="_blank"><%= image_tag "hypelogo.png", class: 'social' %></a><br/><br/>
+    </footer>
+  </div>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </body>
 </html>
-
-

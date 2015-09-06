@@ -1,14 +1,14 @@
 <section class="clearfix thumbgallery full_column">
-  <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
 <% if @user.favorites.length > 0 %>
-    <h3>Favorites</h3>
-    <% @user.favorites.each do |favorite| %>
-      <a href="/images/<%= favorite.image_id %>" class="single-image">
-        <article class="image one_fourth">
-          <img src="<%= favorite.image.url %>"/>
-        </article>
-      </a>
-    <% end %>
+  <h3>Favorites</h3>
+  <% @user.favorites.each do |favorite| %>
+    <a href="/images/<%= favorite.image_id %>" class="single-image">
+      <div class="image one_fourth">
+        <img src="<%= favorite.image.url %>"/>
+      </div>
+    </a>
+  <% end %>
 <% else %>
   <h3>No Favorites</h3>
 <% end  %>
