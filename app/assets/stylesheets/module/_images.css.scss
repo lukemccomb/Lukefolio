@@ -8,42 +8,15 @@
 }
 
 
-
-//$tablet-sml: new-breakpoint(max-width 800px 12);
-$mobile: new-breakpoint(max-width 480px 4);
-//$tablet: new-breakpoint(max-width 1024px 12);
-
 .image {
-//  display: inline-block;
-//  padding-right: 1%;
-//  padding-left: 1%;
-//  margin: .5% auto;
-//  max-height: 140px;
-//  overflow: hidden;
-  @include span-columns(2);
-  @include omega(6n);
-
-//  @include media($tablet-lrg) {
-//    @include span-columns(3);
-//    @include omega(4n);
-//  }
-
-
-
-  @include media($mobile) {
-    @include span-columns(2);
-    @include omega(2n);
-  }
-
-//  @include media($tablet) {
-//    @include span-columns(3);
-//    @include omega(4n);
-//  }
+  display: inline-block;
+  padding-right: 1%;
+  padding-left: 1%;
+  margin: .5% auto;
+  max-height: 140px;
+  overflow: hidden;
 }
 
-.image:hover {
-  @include animation(scale 1.0s ease-in, slide 2.0s ease);
-}
 
 .centergif {
   margin-top: 40px;
