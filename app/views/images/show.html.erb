@@ -37,7 +37,7 @@
   <% else %>
     <p>Register and Log In to Favorite</p>
   <% end %>
-  <% if @image.comments.length > 0 %>
+  <% if @image.comments.size > 0 && current_user %>
     <h5>Comments</h5>
     <% @comments.each do |comment| %>
       <div class="comment-card">

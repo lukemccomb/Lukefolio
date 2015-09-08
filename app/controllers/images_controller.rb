@@ -35,7 +35,11 @@ class ImagesController < ApplicationController
   private
 
   def keywords image
-    string = image.keywords
-    keywords = string.split(", ")
+    if image.keywords == "{}"
+      ["No keywords yet"]
+    else
+      keyword_str = image.keywords
+      keywords = keyword_str.split(", ")
+    end
   end
 end

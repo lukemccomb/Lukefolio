@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:user][:email])
-
+    @photos = Image.all
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to root_path
@@ -21,5 +21,4 @@ class SessionsController < ApplicationController
     session.destroy
     redirect_to root_path
   end
-
 end
