@@ -1,21 +1,3 @@
-/*
- *= require_self
- */
-
-@import "bourbon";
-@import "neat";
-@import "base/variables";
-@import "libs/normalize";
-@import "module/layout";
-@import "module/buttons";
-@import "module/forms";
-@import "module/menus";
-@import "module/images";
-@import "module/typography";
-
-//base-spacing
-//font-sizing
-//colors
-//look at other peoples styles and implimentation of variables
-//color operations
-//
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+ @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+ @import "bootstrap-sass/assets/stylesheets/bootstrap";

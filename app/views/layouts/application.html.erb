@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lukefolio</title>
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link rel="shortcut icon" href="http://lukemccomb.com/images/favicon.ico">
     <%= csrf_meta_tags %>
@@ -60,7 +62,5 @@
       <a href="http://hypem.com/luukin" target="_blank"><%= image_tag "hypelogo.png", class: 'social' %></a><br/><br/>
     </footer>
   </div>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>
