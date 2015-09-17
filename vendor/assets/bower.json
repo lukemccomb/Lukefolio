@@ -1,0 +1,7 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "backbone": "latest",
+    "bootstrap-sass": "latest"
+  }
+}

@@ -1,14 +1,16 @@
-<div class="search">
-  <%= form_for(:search, url: search_path, method: :get) do |form| %>
-    <%= form.text_field :term, placeholder: "Enter a search term like Colorado or Dog" %>
-    <%= form.submit "Search", class: 'search-button', id: 'search-button' %>
-  <% end %>
+<div class="row">
+  <div class="search">
+    <%= form_for(:search, url: search_path, method: :get) do |form| %>
+      <%= form.text_field :term, placeholder: "Enter a search term like Colorado or Dog" %>
+      <%= form.submit "Search", class: 'btn', id: 'search-button' %>
+    <% end %>
+  </div>
 </div>
-<section class="clearfix thumbgallery full_column">
+<section class="container thumbgallery">
 <% @photos.each do |image| %>
-  <div class="image one_fourth">
-    <a href="/images/<%= image.id %>" class="single-image">
-      <img src="<%= image.thumb %>"/>
+  <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+    <a href="/images/<%= image.id %>">
+      <img src="<%= image.thumb %>"/ class="grid-image">
     </a>
   </div>
 <% end %>
