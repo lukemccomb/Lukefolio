@@ -1,71 +1,86 @@
-<div class="row">
-  <div class="showimage">
-    <img src="<%= @image.url %>" alt="" class="singleImageView"/>
-    <h1><%= @image.title %></h1>
-    <% if @keywords != "{}" %>
-      <h3>Keywords:</h3>
-      <ul class="keywords">
-      <% @keywords.each do |keyword| %>
-        <li><%= keyword %></li>
-      <% end %>
-      </ul>
-      <hr/>
-    <% end %>
-    <% if current_user && current_user.admin? %>
-      <div class="add-keywords">
-        <h3>Add Keywords</h3>
-        <%= form_for @image, method: :put do |form| %>
-          <%= form.text_field :keywords, value: "", placeholder: "Add keywords separated by commas", class: 'keyword-input' %>
-          <br/>
-          <%= form.submit 'Add keywords', class: 'keyword-button' %>
+<div class="singleImageWrapper">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="imageInfo">
+        <h1 class="imageTitle">Title: <%= @image.title %></h1>
+        <% if @keywords != "{}" %>
+          <h3 class="imageKeywords">Keywords:</h3>
+          <ul class="keywords">
+          <% @keywords.each do |keyword| %>
+            <li><%= keyword %></li>
+          <% end %>
+          </ul>
+          <hr/>
+        <% end %>
+        <% if current_user && current_user.admin? %>
+          <div class="add-keywords">
+            <h3>Add Keywords</h3>
+            <%= form_for @image, method: :put do |form| %>
+              <%= form.text_field :keywords, value: "", placeholder: "Add keywords separated by commas", class: 'keyword-input' %>
+              <br/>
+              <%= form.submit 'Add keywords', class: 'keyword-button' %>
+            <% end %>
+          </div>
+        <% end %>
+        <% if current_user != nil %>
+          <% if @favorite.length > 0 %>
+            <div class="favoriting">
+              <%= form_for image_favorite_path(@image, current_user), method: :delete do |favorite| %>
+                <%= favorite.button 'Favorited!', class: "favorited btn" %>
+              <% end %>
+              <p>
+                <%= @image.favorites.length == 1 ? "1 favorite" : @image.favorites.length.to_s + " favorites" %>.
+              </p>
+            </div>
+          <% else %>
+            <div class="favoriting">
+              <%= form_for [@image, @new_favorite], html: { method: :create} do |favorite| %>
+                <%= favorite.button 'Click to Favorite', class: "favorite btn" %>
+              <% end %>
+              <p>
+                <%= @image.favorites.length == 1 ? "1 favorite" : @image.favorites.length.to_s + " favorites" %>.
+              </p>
+            </div>
+          <% end %>
+        <% else %>
+          <p>
+            <%= @image.favorites.length %> favorites.
+          </p>
+        <% end %>
+        <% if @image.comments.size > 0 && current_user %>
+          <h5>Comments</h5>
+          <% @comments.each do |comment| %>
+            <div class="comment-card">
+              <p class="comment"><%= comment[:comment] %></p>
+              <p class="comment-created">By <%= comment.user.email %></p>
+              <p class="comment-created">on <%= comment[:created_at].asctime %></p>
+              <% if comment.user_id == current_user.id %>
+                <%= button_to "Edit Comment", edit_image_comment_path(@image, comment.id), method: :get, class: "delete-comment btn" %>
+                <%= button_to "Delete Comment", image_comment_path(@image, comment.id), method: :delete, class: "delete-comment btn" %>
+              <% end %>
+            </div>
+            <hr/>
+          <% end %>
+        <% else %>
+        <p>No Comments yet!</p>
+        <% end %>
+        <% if current_user %>
+          <div class="comment-form">
+            <%= form_for [@image, @new_comment] do |form| %>
+              <br/>
+              <%= form.text_area :comment, :placeholder => "Type comment here..." %>
+              <br/><br/>
+              <%= form.submit :class => 'comment-submit btn' %>
+            <% end %>
+          </div>
+        <% end %>
+        <% unless current_user %>
+          <p><a href="#" data-toggle="modal" data-target=".register-form">Register</a> & <a href="#" data-toggle="modal" data-target=".login-form">login</a> to favorite and comment</p>
         <% end %>
       </div>
-    <% end %>
-    <% if current_user != nil %>
-      <% if @favorite.length > 0 %>
-        <div class="favoriting">
-          <%= form_for image_favorite_path(@image, current_user), method: :delete do |favorite| %>
-            <%= favorite.button 'Favorited!', class: "favorited" %>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="favoriting">
-          <%= form_for [@image, @new_favorite], html: { method: :create} do |favorite| %>
-              <%= favorite.button 'Click to Favorite', class: "favorite" %>
-          <% end %>
-        </div>
-      <% end %>
-    <% else %>
-      <p>Register and Log In to Favorite</p>
-    <% end %>
-    <% if @image.comments.size > 0 && current_user %>
-      <h5>Comments</h5>
-      <% @comments.each do |comment| %>
-        <div class="comment-card">
-          <p class="comment"><%= comment[:comment] %></p>
-          <p class="comment-created">By <%= comment.user.email %></p>
-          <p class="comment-created">on <%= comment[:created_at].asctime %></p>
-          <% if comment.user_id == current_user.id %>
-            <%= button_to "Edit Comment", edit_image_comment_path(@image, comment.id), method: :get, class: "delete-comment" %>
-            <%= button_to "Delete Comment", image_comment_path(@image, comment.id), method: :delete, class: "delete-comment" %>
-          <% end %>
-        </div>
-        <hr/>
-      <% end %>
-    <% else %>
-    <p>No Comments yet!</p>
-    <% end %>
-    <% if current_user %>
-      <div class="comment-form">
-        <%= form_for [@image, @new_comment] do |form| %>
-          <br/>
-          <%= form.text_area :comment, :placeholder => "Type comment here..." %>
-          <br/><br/>
-          <%= form.submit :class => 'comment-submit' %>
-        <% end %>
-      </div>
-    <% else %>
-      <p>Register and Log In to comment</p>
-    <% end %>
+    </div>
+    <div class="col-sm-9">
+      <img src="<%= @image.url %>" alt="" class="singleImageView"/>
+    </div>
   </div>
 </div>
