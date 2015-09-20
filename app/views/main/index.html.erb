@@ -1,7 +1,7 @@
 <div class="row">
   <div class="search">
     <%= form_for(:search, url: search_path, method: :get) do |form| %>
-      <%= form.text_field :term, placeholder: "Enter a search term like Colorado or Dog" %>
+      <%= form.text_field :term, placeholder: "Enter a search term",  class: 'textInput' %>
       <%= form.submit "Search", class: 'btn', id: 'search-button' %>
     <% end %>
   </div>
