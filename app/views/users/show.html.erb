@@ -1,15 +1,20 @@
-<section class="clearfix thumbgallery full_column">
-<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-<% if @user.favorites.length > 0 %>
-  <h3>Favorites</h3>
-  <% @user.favorites.each do |favorite| %>
-    <a href="/images/<%= favorite.image_id %>" class="single-image">
-      <div class="image one_fourth">
-        <img src="<%= favorite.image.url %>"/>
+<section class="userDashboard">
+  <div class="row">
+    <% if @user.favorites.length > 0 %>
+      <div class="col-sm-12">
+        <h3>Favorites</h3>
       </div>
-    </a>
-  <% end %>
-<% else %>
-  <h3>No Favorites</h3>
-<% end  %>
+      <% @user.favorites.each do |favorite| %>
+        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <a href="/images/<%= favorite.image_id %>">
+            <img src="<%= favorite.image.thumb %>" class="grid-image"/>
+          </a>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="col-sm-12">
+        <h3>No Favorites</h3>
+      </div>
+    <% end  %>
+  </div>
 </section>

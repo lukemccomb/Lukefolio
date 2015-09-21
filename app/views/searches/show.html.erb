@@ -1,8 +1,14 @@
 <div class="search">
   <%= form_for(:search, url: search_path, method: :get) do |form| %>
-    <%= form.text_field :term, placeholder: "Enter a search term like Colorado or Dog" %>
-    <%= form.submit "Search", class: 'search-button', id: 'search-button' %>
+    <%= form.text_field :term, placeholder: "Enter a search term",  class: 'textInput searchInput' %>
+    <%= form.submit "Search", class: 'btn', id: 'search-button' %>
   <% end %>
 </div>
-<h2><%= @search.term %></h2>
-<%= render @search.images %>
+<h2 class="searchTerm">Images related to: <%= @search.term %></h2>
+<% @search.images.each do |image| %>
+  <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+    <a href="/images/<%= image.id %>">
+      <img src="<%= image.thumb %>"/ class="grid-image">
+    </a>
+  </div>
+<% end %>

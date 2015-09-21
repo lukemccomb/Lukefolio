@@ -1,17 +1,19 @@
-<div class="row">
-  <div class="search">
-    <%= form_for(:search, url: search_path, method: :get) do |form| %>
-      <%= form.text_field :term, placeholder: "Enter a search term",  class: 'textInput' %>
-      <%= form.submit "Search", class: 'btn', id: 'search-button' %>
-    <% end %>
+<div class="grid-wrapper">
+  <div class="row">
+    <div class="search">
+      <%= form_for(:search, url: search_path, method: :get) do |form| %>
+        <%= form.text_field :term, placeholder: "Enter a search term",  class: 'textInput searchInput' %>
+        <%= form.submit "Search", class: 'btn', id: 'search-button' %>
+      <% end %>
+    </div>
   </div>
+  <section class="thumbgallery">
+  <% @photos.each do |image| %>
+    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+      <a href="/images/<%= image.id %>">
+        <img src="<%= image.thumb %>"/ class="grid-image">
+      </a>
+    </div>
+  <% end %>
+  </section>
 </div>
-<section class="container thumbgallery">
-<% @photos.each do |image| %>
-  <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
-    <a href="/images/<%= image.id %>">
-      <img src="<%= image.thumb %>"/ class="grid-image">
-    </a>
-  </div>
-<% end %>
-</section>

@@ -10,6 +10,7 @@
 .grid-image {
   margin-top: 3rem;
   max-width: 100%;
+  width: 100%;
 }
 
 .head-shot {
@@ -27,5 +28,18 @@
 }
 
 .thumbgallery {
+  max-width: 100%;
   padding-bottom: 10rem;
+}
+
+.searchTerm {
+  text-align: center;
+}
+
+.grid-wrapper {
+  margin-top: 4rem;
+}
+
+.userDashboard {
+  margin-top: 6rem;
 }

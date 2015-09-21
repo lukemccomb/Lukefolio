@@ -18,8 +18,8 @@
           <button data-toggle="dropdown" class="btn btn-nav">Menu</button>
           <nav class="dropdown-menu nav">
             <% if current_user %>
-              <%= link_to "Dashboard", user_path(current_user.id) %>
-              <br/>
+              <%= link_to "Dashboard", user_path(current_user.id), class: 'nav-item' %>
+              <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'nav-item' %>
             <% end %>
             <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank", class: 'nav-item' %>
             <%= link_to "Info", "/info", class: 'nav-item' %>
@@ -40,6 +40,8 @@
       </div>
     </div>
   </header>
+  <%= render 'users/reg_form' %>
+  <%= render 'users/login_form' %>
 
   <% if flash[:register_notice] %>
     <p class="flash"><%= flash[:register_notice] %></p>
