@@ -13,3 +13,13 @@
 .singleImageWrapper {
   margin: 6rem 0;
 }
+
+.new_favorite, .favorited, .favoriteCount {
+  display: inline-block;
+}
+
+.comment-card {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1rem;
+}

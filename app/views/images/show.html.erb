@@ -16,51 +16,47 @@
           <div class="add-keywords">
             <h3>Add Keywords</h3>
             <%= form_for @image, method: :put do |form| %>
-              <%= form.text_field :keywords, value: "", placeholder: "Add keywords separated by commas", class: 'keyword-input' %>
+              <%= form.text_field :keywords, value: "", placeholder: "Add keywords separated by commas", class: 'textInput' %>
               <br/>
-              <%= form.submit 'Add keywords', class: 'keyword-button' %>
+              <%= form.submit 'Add keywords', class: 'btn' %>
             <% end %>
           </div>
         <% end %>
         <% if current_user != nil %>
-          <% if @favorite.length > 0 %>
-            <div class="favoriting">
-              <%= form_for image_favorite_path(@image, current_user), method: :delete do |favorite| %>
-                <%= favorite.button 'Favorited!', class: "favorited btn" %>
-              <% end %>
-              <p>
-                <%= @image.favorites.length == 1 ? "1 favorite" : @image.favorites.length.to_s + " favorites" %>.
-              </p>
-            </div>
-          <% else %>
-            <div class="favoriting">
-              <%= form_for [@image, @new_favorite], html: { method: :create} do |favorite| %>
-                <%= favorite.button 'Click to Favorite', class: "favorite btn" %>
-              <% end %>
-              <p>
-                <%= @image.favorites.length == 1 ? "1 favorite" : @image.favorites.length.to_s + " favorites" %>.
-              </p>
-            </div>
-          <% end %>
-        <% else %>
-          <p>
-            <%= @image.favorites.length %> favorites.
-          </p>
+          <div class="favorite-wrapper">
+            <% if @favorite.length > 0 %>
+              <div class="favoriting">
+                <%= form_for image_favorite_path(@image, current_user), :method => :delete, :html => { :class => "favorited" } do |favorite| %>
+                  <%= favorite.button '', class: "glyphicon glyphicon-star", :style => "color: yellow; border: none; background-color: transparent; font-size: 3rem;" %>
+                <% end %>
+                <%= render "favorite_count" %>
+              </div>
+            <% else %>
+              <div class="favoriting">
+                <%= form_for [@image, @new_favorite], html: { method: :create} do |favorite| %>
+                  <%= favorite.button '', class: "glyphicon glyphicon-star", :style => "color: gray; border: none; background-color: transparent; font-size: 3rem;" %>
+                <% end %>
+                <%= render "favorite_count" %>
+              </div>
+            <% end %>
+          </div>
         <% end %>
         <% if @image.comments.size > 0 && current_user %>
-          <h5>Comments</h5>
-          <% @comments.each do |comment| %>
-            <div class="comment-card">
-              <p class="comment"><%= comment[:comment] %></p>
-              <p class="comment-created">By <%= comment.user.email %></p>
-              <p class="comment-created">on <%= comment[:created_at].asctime %></p>
-              <% if comment.user_id == current_user.id %>
-                <%= button_to "Edit Comment", edit_image_comment_path(@image, comment.id), method: :get, class: "delete-comment btn" %>
-                <%= button_to "Delete Comment", image_comment_path(@image, comment.id), method: :delete, class: "delete-comment btn" %>
-              <% end %>
-            </div>
-            <hr/>
-          <% end %>
+          <div class="comments-wrapper">
+            <h5>Comments</h5>
+            <% @comments.each do |comment| %>
+              <div class="comment-card">
+                <p class="comment"><%= comment[:comment] %></p>
+                <p class="comment-created">By <%= comment.user.email %></p>
+                <p class="comment-created">on <%= comment[:created_at].asctime %></p>
+                <% if comment.user_id == current_user.id %>
+                  <%= link_to "", edit_image_comment_path(@image, comment.id), method: :get, class: "glyphicon glyphicon-pencil" %>
+                  <%= button_to "", image_comment_path(@image, comment.id), method: :delete, class: "glyphicon glyphicon-remove" %>
+                <% end %>
+              </div>
+              <hr/>
+            <% end %>
+          </div>
         <% else %>
         <p>No Comments yet!</p>
         <% end %>
@@ -68,7 +64,7 @@
           <div class="comment-form">
             <%= form_for [@image, @new_comment] do |form| %>
               <br/>
-              <%= form.text_area :comment, :placeholder => "Type comment here..." %>
+              <%= form.text_area :comment, :placeholder => "Type comment here...", :class => "textInput" %>
               <br/><br/>
               <%= form.submit :class => 'comment-submit btn' %>
             <% end %>

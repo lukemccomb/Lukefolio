@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
     @image = Image.find(params[:image_id])
+    render layout: false
   end
 
   def update
