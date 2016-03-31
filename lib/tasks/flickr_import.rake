@@ -17,7 +17,7 @@ namespace :flickr do
 
   task :import => :environment do
     flickr = Flickr.new("#{ENV['FLICKR_KEY']}")
-    user = flickr.users('lukemccomb')
+    user = flickr.users('lucas.mccomb')
     page_number = 1
 
     photo_collection = user.photos(per_page: 100, page: page_number)
