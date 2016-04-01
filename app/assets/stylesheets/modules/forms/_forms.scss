@@ -1,5 +1,10 @@
 .search {
-  margin-top: 10rem;
+  text-align: center;
+  margin-top: 6rem;
+
+  @media (min-width: 992px) {
+    margin-top: 13rem;
+  }
 }
 
 .entry-form {

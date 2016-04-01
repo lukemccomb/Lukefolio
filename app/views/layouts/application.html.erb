@@ -13,7 +13,7 @@
 <body class="body">
   <header class="header">
     <div class="container">
-      <div class="row">
+      <div class="row hidden-xs">
         <div class="col-sm-1">
           <button data-toggle="dropdown" class="btn btn-nav">Menu</button>
           <nav class="dropdown-menu nav">
@@ -36,6 +36,26 @@
               <%= render partial: "main/signed_out" %>
             <% end %>
           </div>
+        </div>
+      </div>
+      <div class="row visible-xs">
+        <div class="col-xs-2">
+          <button data-toggle="dropdown" class="btn btn-nav glyphicon glyphicon-menu-hamburger"></button>
+          <nav class="dropdown-menu nav">
+            <% if current_user %>
+              <%= link_to "Dashboard", user_path(current_user.id), class: 'nav-item' %>
+              <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'nav-item' %>
+              <%= render partial: "main/signed_in" %>
+            <% else %>
+              <%= render partial: "main/signed_out" %>
+            <% end %>
+            <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank", class: 'nav-item' %>
+            <%= link_to "Info", "/info", class: 'nav-item' %>
+          </nav>
+        </div>
+        <div class="col-xs-2 col-xs-offset-8 lm-logo-wrapper">
+          <a href="/"><%= image_tag "full-black.png", class: 'site_logo' %></a>
+        </div>
         </div>
       </div>
     </div>
