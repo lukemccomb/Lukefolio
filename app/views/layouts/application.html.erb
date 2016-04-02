@@ -45,9 +45,10 @@
             <% if current_user %>
               <%= link_to "Dashboard", user_path(current_user.id), class: 'nav-item' %>
               <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'nav-item' %>
-              <%= render partial: "main/signed_in" %>
+              <%= link_to "Log out", signout_path, class: 'nav-item' %>
             <% else %>
-              <%= render partial: "main/signed_out" %>
+              <%= link_to("Register", "", :class => 'nav-item', :data => {:target => ".register-form", :toggle => "modal"}) %>
+              <%= link_to("Login", "", :class => 'nav-item', :data => {:target => ".login-form", :toggle => "modal"}) %>
             <% end %>
             <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank", class: 'nav-item' %>
             <%= link_to "Info", "/info", class: 'nav-item' %>
