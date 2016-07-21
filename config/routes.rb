@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :favorites
   end
 
+  get "/grid" => "main#grid"
+
   resources :users do
   end
 

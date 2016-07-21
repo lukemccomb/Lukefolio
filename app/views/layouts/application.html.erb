@@ -21,7 +21,7 @@
               <%= link_to "Dashboard", user_path(current_user.id), class: 'nav-item' %>
               <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'nav-item' %>
             <% end %>
-            <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank", class: 'nav-item' %>
+            <%= link_to "Grid", "/grid", class: 'nav-item' %>
             <%= link_to "Info", "/info", class: 'nav-item' %>
           </nav>
         </div>
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="row visible-xs">
+      <div class="row">
         <div class="col-xs-2">
           <button data-toggle="dropdown" class="btn btn-nav glyphicon glyphicon-menu-hamburger"></button>
           <nav class="dropdown-menu nav">

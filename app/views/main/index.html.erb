@@ -1,21 +1,5 @@
-<div class="grid-wrapper">
+<div class="index-wrapper">
   <div class="row">
-    <div class="search">
-      <%= form_for(:search, url: search_path, method: :get) do |form| %>
-        <%= form.text_field :term, placeholder: "Enter a search term",  class: 'textInput searchInput' %>
-        <%= form.submit "Search", class: 'btn', id: 'search-button' %>
-      <% end %>
-    </div>
+    <h1>Luke McComb</h1>
   </div>
-  <section class="thumbgallery">
-    <div class="row">
-      <% @photos.each do |image| %>
-        <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-          <a href="/images/<%= image.id %>">
-            <img src="<%= image.thumb %>" class="grid-image">
-          </a>
-        </div>
-      <% end %>
-    </div>
-  </section>
 </div>

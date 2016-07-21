@@ -7,4 +7,9 @@ class MainController < ApplicationController
   def info
     @user = User.new
   end
+
+  def grid
+    @user = User.new
+    @photos = Image.all
+  end
 end
