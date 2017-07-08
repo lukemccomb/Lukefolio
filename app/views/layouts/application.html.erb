@@ -13,83 +13,25 @@
 <body class="body">
   <header class="header">
     <div class="container">
-      <div class="row hidden-xs">
-        <div class="col-sm-1">
-          <button data-toggle="dropdown" class="btn btn-nav">Menu</button>
-          <nav class="dropdown-menu nav">
-            <% if current_user %>
-              <%= link_to "Dashboard", user_path(current_user.id), class: 'nav-item' %>
-              <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'nav-item' %>
-            <% end %>
-            <%= link_to "Grid", "/grid", class: 'nav-item' %>
-            <%= link_to "Info", "/info", class: 'nav-item' %>
-          </nav>
-        </div>
-        <div class="col-sm-2 col-sm-offset-4 lm-logo-wrapper">
-          <a href="/"><%= image_tag "full-black.png", class: 'site_logo' %></a>
-        </div>
-        <div class="col-sm-3 col-sm-offset-2">
-          <div class="session-actions">
-            <% if current_user %>
-              <%= render partial: "main/signed_in" %>
-            <% else %>
-              <%= render partial: "main/signed_out" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
+      <div clas="row">
         <div class="col-xs-2">
+            <%= link_to "Luke McComb", root_path, class: ["text-h1", "header-title"] %>
+        </div>
+        <div class="col-xs-1">
           <button data-toggle="dropdown" class="btn btn-nav glyphicon glyphicon-menu-hamburger"></button>
           <nav class="dropdown-menu nav">
-            <% if current_user %>
-              <%= link_to "Dashboard", user_path(current_user.id), class: 'nav-item' %>
-              <%= link_to "Edit Profile", edit_user_path(current_user.id), class: 'nav-item' %>
-              <%= link_to "Log out", signout_path, class: 'nav-item' %>
-            <% else %>
-              <%= link_to("Register", "", :class => 'nav-item', :data => {:target => ".register-form", :toggle => "modal"}) %>
-              <%= link_to("Login", "", :class => 'nav-item', :data => {:target => ".login-form", :toggle => "modal"}) %>
-            <% end %>
-            <%= link_to "Blog", "http://lukemcblog.com", :target => "_blank", class: 'nav-item' %>
             <%= link_to "Info", "/info", class: 'nav-item' %>
+            <%= link_to "Grid", "/grid", class: 'nav-item' %>
           </nav>
-        </div>
-        <div class="col-xs-2 col-xs-offset-8 lm-logo-wrapper">
-          <a href="/"><%= image_tag "full-black.png", class: 'site_logo' %></a>
-        </div>
         </div>
       </div>
     </div>
   </header>
-  <%= render 'users/reg_form' %>
-  <%= render 'users/login_form' %>
-
-  <% if flash[:register_notice] %>
-    <p class="flash"><%= flash[:register_notice] %></p>
-  <% end %>
-  <% if flash[:reg_fail] %>
-    <p class="flash"><%= flash[:reg_fail] %></p>
-  <% end %>
-  <% if flash[:login_fail] %>
-    <p class="flash"><%= flash[:login_fail] %></p>
-  <% end %>
   <div class="wrapper">
-    <% if @user %>
-      <% @user.errors.full_messages.each do |error| %>
-        <div class="errors">
-          <%= error %>
-        </div>
-      <% end %>
-    <% end %>
     <div class="container">
       <%= yield %>
     </div>
     <footer class="footer">
-      <a href="https://twitter.com/lukemccomb" target="_blank"><%= image_tag "twitterlogo.png", class: 'footer-logo' %></a>
-      <a href="https://github.com/lukemccomb" target="_blank"><%= image_tag "githublogo.png", class: 'footer-logo' %></a>
-      <a href="http://lukemcblog.com/" target="_blank"><%= image_tag "tumblrlogo.png", class: 'footer-logo' %></a>
-      <a href="http://instagram.com/mcluukin" target="_blank"><%= image_tag "instalogo.png", class: 'footer-logo' %></a>
-      <a href="http://soundcloud.com/eluketronic/" target="_blank"><%= image_tag "soundcloudlogo.png", class: 'footer-logo' %></a>
     </footer>
   </div>
   </body>
