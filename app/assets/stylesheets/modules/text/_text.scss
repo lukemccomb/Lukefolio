@@ -9,3 +9,27 @@
     text-decoration: none;
   }
 }
+
+.text-darkest {
+  color: $darkest;
+}
+
+.text-darker {
+  color: rgb(30, 31, 111);
+}
+
+.text-light {
+  color: rgb(255, 0, 191);
+}
+
+.text-lightest {
+  color: $lightest;
+}
+
+.textShadow_light-min {
+  text-shadow: 0.5px 0.5px 0.5px rgba(255,255,255, 0.5);
+}
+
+.text-bold {
+  font-weight: bold;
+}

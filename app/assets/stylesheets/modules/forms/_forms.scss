@@ -1,11 +1,4 @@
-.search {
-  text-align: center;
-  margin-top: 6rem;
-
-  @media (min-width: 992px) {
-    margin-top: 13rem;
-  }
-}
+@import "../palette";
 
 .entry-form {
   padding: 3rem;
@@ -26,4 +19,15 @@
   display: block;
   margin: 1rem auto;
   text-align: center;
+}
+
+.input_minimal {
+  background-color: transparent;
+  border: none;
+  color: $lightest;
+  margin-left: 12px;
+}
+
+span.glyphicon.glyphicon-search.form-control-feedback::before {
+  color: white;
 }

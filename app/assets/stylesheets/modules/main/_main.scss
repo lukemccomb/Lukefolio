@@ -19,7 +19,7 @@
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 0, 0, 1) 100%),
     url("Florence_BobliGardens-me.jpg");
-  background-position: left center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -54,9 +54,17 @@
 }
 
 .grid-wrapper {
-  margin-top: 4rem;
+  margin-top: 9rem;
 }
 
 .userDashboard {
   margin-top: 6rem;
+}
+
+.bg_transparent {
+  background-color: transparent;
+}
+
+.boxShadow_minimal {
+  box-shadow: 1px 1px 1px rgba(255,255,255, .75);
 }

@@ -1,10 +1,10 @@
 $(document).ready(function(){
   var dataText = [
-    "Hey there. ",
-    "My name is Luke. ",
-    "I'm a software engineer at IBM. ",
+    "Hey there.",
+    "My name is Luke.",
+    "I'm a software engineer at IBM.",
     "I live in Denver, Colorado.",
-    "Check out the most recent song I've liked on SoundCloud: "
+    "Check out the most recent song I've liked on SoundCloud:"
   ];
 
   function typeWriter(text, textIterator, phraseIterator, fnCallback) {

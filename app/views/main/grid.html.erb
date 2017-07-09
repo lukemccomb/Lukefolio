@@ -1,21 +1,37 @@
 <div class="grid-wrapper">
-  <div class="row">
-    <div class="search">
-      <%= form_for(:search, url: search_path, method: :get) do |form| %>
-        <%= form.text_field :term, placeholder: "Enter a search term",  class: 'textInput searchInput' %>
-        <%= form.submit "Search", class: 'btn', id: 'search-button' %>
-      <% end %>
-    </div>
+  <div class="container-fluid">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active">
+        <%= link_to "/grid", class: [] do %>
+          <span class="glyphicon glyphicon-th"></span> All
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to "/grid", class: [] do %>
+          <span class="glyphicon glyphicon-tags"></span> Collections
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to "/grid", class: [] do %>
+          <span class="glyphicon glyphicon-heart"></span> My Pics
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to "/grid", class: [] do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span> My Orders
+        <% end %>
+      </li>
+    </ul>
+    <section class="thumbgallery">
+      <div class="row">
+        <% @photos.each do |image| %>
+          <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <a href="/images/<%= image.id %>">
+              <img src="<%= image.thumb %>" class="grid-image">
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </section>
   </div>
-  <section class="thumbgallery">
-    <div class="row">
-      <% @photos.each do |image| %>
-        <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-          <a href="/images/<%= image.id %>">
-            <img src="<%= image.thumb %>" class="grid-image">
-          </a>
-        </div>
-      <% end %>
-    </div>
-  </section>
 </div>
