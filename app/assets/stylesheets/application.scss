@@ -1,3 +1,8 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -9,4 +14,3 @@
 @import "modules/text/text";
 @import "modules/images/images";
 @import "modules/layout";
-*= require_tree
