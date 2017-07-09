@@ -10,3 +10,9 @@ development:
 test:
   <<: *default
   database: lukefolio_test
+
+production:
+  <<: *default
+  database: lukefolio_production
+  username: lemccomb
+  password: <%= ENV['LUKEMCCOMB_DATABASE_PASSWORD'] %>
