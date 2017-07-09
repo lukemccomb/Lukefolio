@@ -1,6 +1,5 @@
-$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
-@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 @import "modules/main/main";
 @import "modules/footer/footer";
@@ -9,3 +8,4 @@ $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "modules/forms/forms";
 @import "modules/text/text";
 @import "modules/images/images";
+@import "modules/layout";

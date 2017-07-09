@@ -1,14 +1,9 @@
-.header {
-  background-color: rgba(0,0,0, 1);
-  padding: 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 1;
-}
-
 .menu_logo {
   width: 3rem;
+}
+
+.header-logo {
+  width: 25px;
 }
 
 .site_logo {
@@ -23,17 +18,7 @@
   float: right;
 }
 
-.nav {
-  margin: .5rem 0 0 1.4rem;
-  min-width: 10rem;
-}
-
 .nav-item {
   display: block;
   padding-left: 1rem;
-}
-
-.header-title {
-  position: fixed;
-  bottom: 5px;
 }

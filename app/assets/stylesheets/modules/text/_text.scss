@@ -1,7 +1,8 @@
+@import "modules/_palette";
+
 .text-h1 {
   font-size: 20px;
-  color: rgba(255, 255, 255, .75);
-  vertical-align: middle;
+  color: $lightest;
 
   &:hover {
     color: rgba(blue, .65);

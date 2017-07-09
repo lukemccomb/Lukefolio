@@ -1,3 +1,5 @@
+//= require jquery3
+//= require bootstrap-sprockets
 //= require vendor_requires
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
+//= require text_type
 //= require_tree .

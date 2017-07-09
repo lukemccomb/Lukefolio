@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Luke McComb", root_path, class: 'navbar-brand' %>
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+      <li><%= link_to "Info", "/info", class: [] %></li>
+      <li><%= link_to "Photography", "/grid", class: [] %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <%= link_to "https://twitter.com/lukemccomb", target: "_blank" do %>
+          <%= image_tag "twitterlogo.png", class: 'header-logo' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "https://github.com/lukemccomb", target: "_blank" do %>
+          <%= image_tag "githublogo.png", class: 'header-logo' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "http://instagram.com/lukeyluuke", target: "_blank" do %>
+          <%= image_tag "instalogo.png", class: 'header-logo' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "http://soundcloud.com/eluketronic/", target: "_blank" do %>
+          <%= image_tag "soundcloudlogo.png", class: 'header-logo' %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>

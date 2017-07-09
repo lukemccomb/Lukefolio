@@ -10,29 +10,10 @@
     <%= csrf_meta_tags %>
     <link rel="shortcut icon" href="http://lukemccomb.com/images/favicon.ico">
   </head>
-<body class="body">
-  <header class="header">
-    <div class="container">
-      <div clas="row">
-        <div class="col-xs-2">
-            <%= link_to "Luke McComb", root_path, class: ["text-h1", "header-title"] %>
-        </div>
-        <div class="col-xs-1">
-          <button data-toggle="dropdown" class="btn btn-nav glyphicon glyphicon-menu-hamburger"></button>
-          <nav class="dropdown-menu nav">
-            <%= link_to "Info", "/info", class: 'nav-item' %>
-            <%= link_to "Grid", "/grid", class: 'nav-item' %>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div class="wrapper">
-    <div class="container">
+  <body class="body">
+    <%= render partial: "layouts/header" %>
+    <div class="container-fluid padding-all-0">
       <%= yield %>
     </div>
-    <footer class="footer">
-    </footer>
-  </div>
   </body>
 </html>

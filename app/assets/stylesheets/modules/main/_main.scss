@@ -13,7 +13,29 @@
 }
 
 .info-wrapper {
-  margin-top: 10rem;
+  background-attachment: fixed;
+  background-image: linear-gradient(to left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 1) 100%),
+    url("Florence_BobliGardens-me.jpg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  padding-top: 200px;
+}
+
+.type-cursor {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .singleImageView {

@@ -1,8 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: gschool
-  pool: 5
+  username: lemccomb
 
 development:
   <<: *default
