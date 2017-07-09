@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :favorites
   end
 
-  get "/grid" => "main#grid"
+  get "/photo" => "photo#index"
 
   resources :users do
   end

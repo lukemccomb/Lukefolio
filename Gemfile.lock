@@ -75,6 +75,8 @@ GEM
     flickr.rb (1.2.1)
       xml-simple (>= 1.0.7)
     flickraw (0.9.9)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     handlebars_assets (0.23.2)
@@ -219,6 +221,7 @@ DEPENDENCIES
   dotenv-rails
   flickr.rb
   flickraw
+  font-awesome-rails (~> 4.7, >= 4.7.0.2)
   handlebars_assets
   jbuilder (~> 2.0)
   jquery-rails

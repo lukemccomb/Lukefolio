@@ -3,13 +3,4 @@ class MainController < ApplicationController
     @user = User.new
     @photos = Image.all
   end
-
-  def info
-    @user = User.new
-  end
-
-  def grid
-    @user = User.new
-    @photos = Image.all
-  end
 end

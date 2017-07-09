@@ -1,0 +1,46 @@
+<div class="tab-wrapper">
+  <div class="container-fluid">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active">
+        <a href="#tab-gallery"
+            role="tab"
+            data-toggle="tab"
+            aria-controls="tab-gallery">
+          <%= fa_icon "th" %> Gallery
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#tab-collections"
+            role="tab"
+            data-toggle="tab"
+            aria-controls="tab-collections">
+          <%= fa_icon "book" %> Collections
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#tab-user"
+            role="tab"
+            data-toggle="tab"
+            aria-controls="tab-user">
+          <%= fa_icon "heart" %> My Pics
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#tab-cart"
+            role="tab"
+            data-toggle="tab"
+            aria-controls="tab-cart">
+          <%= fa_icon "shopping-cart" %> My Orders
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="tab-gallery">
+        <%= render partial: "gallery" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="tab-collections">Collections</div>
+      <div role="tabpanel" class="tab-pane" id="tab-user">My Pics</div>
+      <div role="tabpanel" class="tab-pane" id="tab-cart">My Orders</div>
+    </div>
+  </div>
+</div>

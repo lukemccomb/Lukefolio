@@ -4,7 +4,61 @@
       <%= link_to "Luke McComb", root_path, class: 'navbar-brand' %>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to "Photography", "/grid", class: [] %></li>
+      <li class="dropdown">
+        <a href="#"
+          class="dropdown-toggle"
+          data-toggle="dropdown"
+          role="button"
+          id="photoDropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <%= fa_icon "camera" %>
+          Photography
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+          <li>
+            <%= link_to "/photo", class: [] do %>
+              <%= fa_icon "th" %> Gallery
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/photo", class: [] do %>
+              <%= fa_icon "book" %> Collections
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/photo", class: [] do %>
+              <%= fa_icon "heart" %> My Pics
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/photo", class: [] do %>
+              <%= fa_icon "shopping-cart" %> My Orders
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#"
+          class="dropdown-toggle"
+          data-toggle="dropdown"
+          role="button"
+          id="projectsDropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <%= fa_icon "code" %>
+          Projects
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+          <li>
+            <%= link_to "Rantly",
+                "https://luke-rantly.herokuapp.com/",
+                class: [],
+                target: "_blank" %>
+          </li>
+        </ul>
+      </li>
       <li>
         <%= bootstrap_form_for(:search, url: search_path, method: :get) do |form| %>
         <%= form.text_field :term,
@@ -25,23 +79,23 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <%= link_to "https://twitter.com/lukemccomb", target: "_blank", class: 'link_thin' do %>
-          <%= image_tag "twitterlogo.png", class: 'header-logo' %>
+        <%= link_to "https://twitter.com/lukemccomb", target: "_blank", class: 'link_thin', title: "Twitter" do %>
+          <%= fa_icon "twitter lg" %>
         <% end %>
       </li>
       <li>
-        <%= link_to "https://github.com/lukemccomb", target: "_blank", class: 'link_thin' do %>
-          <%= image_tag "githublogo.png", class: 'header-logo' %>
+        <%= link_to "https://github.com/lukemccomb", target: "_blank", class: 'link_thin', title: "GitHub" do %>
+          <%= fa_icon "github lg" %>
         <% end %>
       </li>
       <li>
-        <%= link_to "http://instagram.com/lukeyluuke", target: "_blank", class: 'link_thin' do %>
-          <%= image_tag "instalogo.png", class: 'header-logo' %>
+        <%= link_to "http://instagram.com/lukeyluuke", target: "_blank", class: 'link_thin', title: "Instagram" do %>
+          <%= fa_icon "instagram lg" %>
         <% end %>
       </li>
       <li>
-        <%= link_to "http://soundcloud.com/eluketronic/", target: "_blank", class: 'link_thin' do %>
-          <%= image_tag "soundcloudlogo.png", class: 'header-logo' %>
+        <%= link_to "http://soundcloud.com/eluketronic/", target: "_blank", class: 'link_thin', title: "Soundcloud" do %>
+          <%= fa_icon "soundcloud lg" %>
         <% end %>
       </li>
     </ul>
