@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
-    @keywords = keywords(@image)
+    @keywords = @image.keywords
     if current_user
       @new_comment = Comment.new
       @comments = Comment.where(image_id: @image.id).to_a

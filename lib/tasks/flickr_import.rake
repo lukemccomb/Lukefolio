@@ -2,14 +2,20 @@
 
 namespace :flickr do
 
-  def import_photos(photos)
+  def import_photos(flickr, photos)
     photos.each do |image|
       p image
       @db_image = Image.new
       @db_image.url = "https://farm#{image[:farm]}.staticflickr.com/#{image[:server]}/#{image[:id]}_#{image[:secret]}.jpg"
       @db_image.thumb = "https://farm#{image[:farm]}.staticflickr.com/#{image[:server]}/#{image[:id]}_#{image[:secret]}_q.jpg"
       @db_image.title = image.title
-      @db_image.keywords = "#{image.description}"
+      # @db_image.keywords = []
+      image.tags.each do |outterTag|
+        outterTag[1].each do |tag|
+          @db_image.keywords.push(tag["raw"].downcase);
+        end
+      end
+      puts "IMAGE KEyWORDS***::: " + @db_image[:keywords].to_s
       @db_image.caption = "#{image.description}"
       @db_image.save
     end
@@ -24,7 +30,7 @@ namespace :flickr do
 
     number_pages = photo_collection.pages
 
-    import_photos(photo_collection)
+    import_photos(flickr, photo_collection)
 
     while page_number < number_pages.to_i
       page_number += 1
